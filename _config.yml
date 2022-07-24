@@ -110,7 +110,7 @@ deploy:
     branch: main
   - type: git
     repository: 
-      site: ssh://ubuntu@101.43.107.49:22112/home/ubuntu/DocumentServer/Tool_docs/hexo_nginx/blog3.git
+      site: ssh://ubuntu@101.43.107.49:22112/home/ubuntu/DocumentServer/Tool_docs/hexo_nginx/blog4.git
     branch: master
 
 html_minifier:
