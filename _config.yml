@@ -112,3 +112,36 @@ deploy:
     repository: 
       site: ssh://ubuntu@101.43.107.49:22112/home/ubuntu/DocumentServer/Tool_docs/hexo_nginx/blog3.git
     branch: master
+
+html_minifier:
+  html_minifier:  
+  collapseBooleanAttributes: true
+  collapseWhitespace: true
+  # Ignore '<!-- more -->' https://hexo.io/docs/tag-plugins#Post-Excerpt
+  ignoreCustomComments: [ !!js/regexp /^\s*more/]
+  removeComments: true
+  removeEmptyAttributes: true
+  removeScriptTypeAttributes: true
+  removeStyleLinkTypeAttributes: true
+  minifyJS: true
+  minifyCSS: true
+  exclude: 
+
+clean_css:
+  exclude:
+    - '*.min.css'
+
+uglify:
+  mangle: true
+  output: 
+  compress:
+  exclude:
+    - '*.min.js'
+
+# imagemin:
+#   enable: true
+#   interlaced: false
+#   multipass: false
+#   optimizationLevel: 2
+#   pngquant: false
+#   progressive: false
