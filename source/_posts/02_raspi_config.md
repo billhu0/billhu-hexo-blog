@@ -1,5 +1,5 @@
 ---
-title: 树莓派配置记录
+title: Raspi config
 date: 2021-09-12 23:16:05
 categories: 
 - Raspi&Arduino
@@ -8,26 +8,24 @@ tags:
 - RaspberryPi
 ---
 
-# 我的一些树莓派设置
 
+### Start VNC and SSH
 
-### 启动VNC和SSH
-
-`sudo raspi-config`，在界面中开启vnc和ssh即可
+`sudo raspi-config`，and start vnc and ssh with the UI.
 
 *<!-- more -->*
 
-电脑ssh树莓派时，如果出现类似以下的错误：
+When connecting to raspi with ssh, if the following error happens: 
 
 ![](02_raspi_config/ssh_host_changed.png)
 
-解决方法是输入以下命令（将`<IP_ADDRESS>`换成树莓派的ip地址），然后重新连接：
+The solution is to use the following command (replace `<IP_ADDRESS>` with the IP address of raspi), and connect again
 
 ```sh
 ssh-keygen -R <IP_ADDRESS>
 ```
 
-###  apt-get切换国内源，解决下载太慢问题
+### apt-get切换国内源
 
 首先查看linux（树莓派os为debian）版本：`lsb_release -a`，版本可能是buster或bullseye
 
@@ -59,7 +57,7 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main con
 
 
 
-### 安装vim
+### Install vim
 
 ```shell
 sudo apt-get install vim 
@@ -67,27 +65,27 @@ sudo apt-get install vim
 
 
 
-### 安装zsh和oh my zsh
+### Install zsh and oh my zsh
 
-参考 [mintimate](https://mintimate.cn) 的教程。
+For reference:  [mintimate](https://mintimate.cn)
 
-1 安装zsh并设置为默认终端
+1 Install zsh and set it as the default terminal 
 
-安装zsh：`sudo apt-get install zsh`
+Install zsh：`sudo apt-get install zsh`
 
-查看zsh路径： `which zsh` ，路径应该是`/bin/zsh`或者`/usr/bin/zsh`
+See the path of zsh： `which zsh` , which should be `/bin/zsh` or `/usr/bin/zsh`
 
-设置为默认shell：`chsh -s /bin/zsh`，重启终端或者重启系统生效
+Set it as the default shell：`chsh -s /bin/zsh`, restart terminal or restart system to take effect
 
-2 安装oh my zsh
+2 Install 'oh my zsh'
 
-一键安装脚本
+One-click setup script:
 
 ```shell
 zsh -c "$(curl -fsSL 'https://api.host.mintimate.cn/fileHost/public/download/1P0R')"
 ```
 
-切换主题：
+switch theme：
 
 ```shell
 vim ~/.zshrc
@@ -97,24 +95,24 @@ source ~/.zshrc
 
 
 
-### vim代码高亮、显示行号等设置
+### vim code highlighting, line number display...
 
 ```shell
-vim ~/.zshrc  # 如果没有这个文件也没关系，直接vim会自动新建这个文件
+vim ~/.vimrc  # don't worry if the file does not exist, vim will create one 
 
-# 在里面添加————————————————————————————————————————————
-syntax on " 语法高亮
+# Add the following————————————————
+syntax on " syntax highlighting
 
-set tabstop=4  " Tab键的宽度
+set tabstop=4  " 
 set softtabstop=4
-set shiftwidth=4  "  统一缩进为4
+set shiftwidth=4  "  
 
-set nu   " 显示行号
-colorscheme pablo   " 设置颜色主题
-set ruler   " 在编辑过程中，在右下角显示光标位置的状态行
+set nu   " show line number
+colorscheme pablo   " set theme
+set ruler   " Show the pointer positon at bottom-right corner when editing
 
 
-# 保存并退出，下次进入vim会自动生效—————————————————————————————————
+# Save and exit, and it will take effect the next time you enter vim
 
 ```
 
@@ -122,7 +120,7 @@ set ruler   " 在编辑过程中，在右下角显示光标位置的状态行
 
 
 
-### 查看cpu情况：
+### See CPU usage：
 
 ```shell
 sudo pip install s-tui
@@ -135,7 +133,7 @@ sudo s-tui
 ### github太慢：
 
 {% note danger %}
-此方法可能已经失效！
+此方法可能已经失效！The following solution may have been outdated!
 {% endnote %}
 
 使用github的镜像网站进行访问，[github.com.cnpmjs.org](https://link.zhihu.com/?target=http%3A//github.com.cnpmjs.org)，我们将原本的网站中的github.com 进行替换。比如`git clone github.com/xxx/xxx.git`，将其替换为`git clone github.com.cnpmjs.org/xxx/xxx.git`

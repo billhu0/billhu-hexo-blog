@@ -12,7 +12,7 @@ tags:
 
 ## How to render $\LaTeX$ formulas in hexo blog (theme ‘fluid’)
 
-By default, $\LaTeX$ formulas are not rendered and cannot be correctly displayed. To fix this, the first step is to uninstall the default renderer and install $\KaTeX$ renderer.  ( $\mathrm{mathjax}$ is also an alternative, but it has some render problems in my tries, and I don’t know why). 
+By default, $\LaTeX$ formulas are not rendered and cannot be correctly displayed. To fix this, the first step is to uninstall the default renderer and install $\KaTeX$ renderer.  ( $\mathrm{mathjax}$ is also an alternative, but it cannot render some complex formulas). 
 
 In terminal, `cd` to your hexo directory, and run the following
 
@@ -33,20 +33,6 @@ npm install hexo-math --save
 ```
 
 After that, modify some configurations:
-
-In `_config.yml`, modify the corresponding part to the following:
-
-```yml
-math:
-  engine: katex
-  katex:
-    css: https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css
-    js: https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js
-    config:
-      # KaTeX config
-      throwOnError: false
-      errorColor: "#cc0000"
-```
 
 In ‘fluid’ theme `_config.fluid.yml`, modify the corresponding part to the following:
 
