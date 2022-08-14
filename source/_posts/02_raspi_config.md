@@ -11,11 +11,15 @@ tags:
 
 ### Start VNC and SSH
 
-`sudo raspi-config`，and start vnc and ssh with the UI.
+Enter the terminal of raspi, `sudo raspi-config`，and start vnc and ssh with the UI interface.
+
+Alternatively, after you flashed the SD card with raspi os, create a file named `ssh` (no filename extension, just `ssh`) at the root of the directory, and SSH will be automatically enabled during the first system startup.
 
 *<!-- more -->*
 
-When connecting to raspi with ssh, if the following error happens: 
+### 'Remote host identification changed' error
+
+When connecting to raspi (or any other ssh hosts) with ssh, if the following error happens: 
 
 ![](02_raspi_config/ssh_host_changed.png)
 
@@ -133,7 +137,7 @@ sudo s-tui
 ### github太慢：
 
 {% note danger %}
-此方法可能已经失效！The following solution may have been outdated!
+此方法已经失效！The following solution may have been outdated!
 {% endnote %}
 
 使用github的镜像网站进行访问，[github.com.cnpmjs.org](https://link.zhihu.com/?target=http%3A//github.com.cnpmjs.org)，我们将原本的网站中的github.com 进行替换。比如`git clone github.com/xxx/xxx.git`，将其替换为`git clone github.com.cnpmjs.org/xxx/xxx.git`

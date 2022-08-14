@@ -1,7 +1,7 @@
 ---
-title: (mac/Linux/win) 使用Vscode/Jetbrains IDE写LaTeX的配置
+title: "(Mac/Linux/Win) Write LaTeX with VSCode or Jetbrains IDE"
 date: 2021-09-14 19:38:40
-description: 配置latex环境，并使用Vscode或Jetbrains IDE配合插件写latex，保存时自动编译，实现'半实时预览'.
+description: Configure latex environment and using VSCode or JetBrains IDE along with plugins to write latex.
 categories:
 - VSCode
 tags:
@@ -9,45 +9,46 @@ tags:
 - VSCode
 ---
 
-# [Mac/Linux/Win] 用 VSCode 或 Jetbrains IDE 写 LaTeX 
+# [Mac/Linux/Win] Write LaTeX with VSCode or Jetbrains IDE
 
 
 
-## 一. 安装 LaTeX 环境
+## Part 1. Install LaTeX
 
-### macOS: 安装 MacTex （TexShop）
+### macOS: Install MacTex （TexShop）
 
-​	链接： [https://www.tug.org/mactex/](https://www.tug.org/mactex/)
+​	Link: [https://www.tug.org/mactex/](https://www.tug.org/mactex/)
 
 {% note warning %}
-注意：有两个版本，”完整版“大约4G，”精简版“大约100M。除非实在是电脑存储空间不足，否则强烈建议下载那个大的，否则可能出现ctex等package缺失的问题。
+
+Note: there are two versions. The larger one takes approximately 4G, and the smaller one is 100M. The larger one is highly recommended unless your computer is really short of storage, otherwise, you may encounter problems like the loss of ctex package.
 {% endnote %}
 
 
-### Linux: 安装texlive
+### Linux: Install texlive
 
-​	使用你的包管理器安装 `texlive-full` ，比如 Ubuntu / Debian 可以使用 `sudo apt install texlive-full`
+​	Install  `texlive-full` with your package manager. For example, install with  `sudo apt install texlive-full` on ubuntu or debian.
 
 ### Windows: 
 
-​	链接：[https://tug.org/texlive/windows.html](https://tug.org/texlive/windows.html)
+​	Link: [https://tug.org/texlive/windows.html](https://tug.org/texlive/windows.html)
 
-​	从网页上「Easy install」的地方下载「install-tl-windows.exe」，并打开进行安装。
+​	Find "Easy install" on the webpage and download `install-tl-windows.exe`, then open it and install.	
 
-​	
 
-## 二. VSCode 配置方法
 
-### 1.在VSCode中安装插件
+## Part 2. VSCode comfiguration
 
-​		`LaTeX WorkShop` 和 `LaTeX Lauguage Support`
+### 1.Install plugin
 
-### 2. 修改 `settings.json`
+​		Install plugin `LaTeX WorkShop`  and  `LaTeX Lauguage Support` in vscode.
 
-​		添加以下内容：
+### 2. Modify `settings.json`
+
+​		Add the following:
 
 ```json
-	"latex-workshop.latex.autoBuild.run": "onSave",
+	  "latex-workshop.latex.autoBuild.run": "onSave",
     "latex-workshop.showContextMenu": true,
     "latex-workshop.intellisense.package.enabled": true,
     "latex-workshop.message.error.show": false,
@@ -165,78 +166,74 @@ tags:
 ```
 
 {% note info %}
-备注：可以使用 Command + Shift + P ( Ctrl + Shift + P ) 并搜索settings就能跳出来 `Preferences: Open Settings (JSON)` 这一项
+Note: You can use Command + Shift + P ( Ctrl + Shift + P )  and search for 'settings', and select  `Preferences: Open Settings (JSON)` 
 {% endnote %}
 
 
-然后再VSCode左侧边栏 "Tex" 中的`Build LaTeX Project`选项中，根据需要选择，如果你不知道选哪个，建议选择 `XeLaTeX`。
+Click "tex" in the left column bar, and inside `Build LaTeX Project` menu, choose one at your need. Usually `PDFLatex` or  `XeLaTeX` is fine.
 
 ![](09_vscode_latex/screenshot1.png)
 
-这样即可实现 保存时自动编译的功能。（`CMD+S`保存）
+Now the latex will automatically compile every time you save the file. (`CMD+S` to save)
 
-### 3. 如何支持中文
+### 3. How to support Chinese
 
-确保latex文档编码为'UTF-8'，在文档开头添加一句代码：
+Make sure the latex file encoding is 'UTF-8', and add a package at the top:
 
 ```latex
 \usepackage{ctex}
 ```
 
-## 三. JetBrains IDE 配置方法
 
-​		（以Intellij IDEA为例，PyCharm、CLion等其它JetBrains IDE配置方法相同）
 
-### 1 安装plugin
+## Part 3. JetBrains IDE configuration
 
-​	在 Preference -> Plugins 中下载安装 `TeXiFy IDEA`和`PDF Viewer`插件。	
+​		(Intellij IDEA is taken as an example. Same for others like PyCharm, CLion, ...)
+
+### 1. Install plugin
+
+​	In Preference -> Plugins, download and install  `TeXiFy IDEA` and `PDF Viewer.	
 
 ![](09_vscode_latex/image-20210915230311465.png)
 
-​	如果出现死活搜索不出东西，提示网络问题的话，可以试试 设置 -> Auto-detect proxy settings -> 填入 `plugins.jetbrains.com`
+​	If it cannot find anything and warns a network issue, try settings -> Auto-detect proxy settings -> Fill in `plugins.jetbrains.com`
 
 ![](09_vscode_latex/11.jpg)
 
 
 
-### 2 Edit Configurations
+### 2. Edit Configurations
 
-​	创建一个tex后缀的文件，点击右上角的 `Add Configuration`
+​	Create a file with `.tex` extension, and click  `Add Configuration` at the top-right corner
 
 ![](09_vscode_latex/image-20210915231225002.png)
 
-​	左上角添加 -> 选择LaTeX
+​	Click the + Button at top-left, and select LaTeX
 
 ![](09_vscode_latex/image-20210915231334132.png)
 
-​	Name随便填（建议填tex文件名）； 
+​	'Name' can be anything (e.g. the tex file name); 
 
-​	Compiler 选 `XeLaTeX`；
+​	'Compiler': choose  `XeLaTeX`;
 
-​	PDF Viewer 选 `Built-in PDF Viewer`；
+​	'PDF Viewer': Choose  `Built-in PDF Viewer`；
 
-​	Main File to compile 选择你写的tex文件
+​	'Main File to compile': Choose the tex file you want to compile.
 
 ![](09_vscode_latex/2314213.jpg)
 
-### 3  编译LaTeX
+### 3. Compile LaTeX
 
-​	点击右上角的运行按钮，或使用快捷键`Control + R`即可编译LaTeX生成PDF文件。此时插件应该会自动分屏（左侧为LaTeX源码，右侧为PDF阅读器）。如果没有自动分屏，就手动把`out`文件夹里的pdf文件拖出来分屏。
+​	Click the green 'run' button on the top-right corner, or use `Control + R` to compile LaTeX and get PDF. At this time, the plugin will toggle a split-screen (left side is LaTeX, and right side is the PDF viewer). If it does not automatically split-screen, drag the pdf in `./out` folder to create a split-screen.
 
-​	每次使用快捷键`Control + R`时都会自动编译并更新PDF，实现实时预览。
+​	Each time you use`Control + R`, the latex will compile and the PDF will be updated.
 
 ![](09_vscode_latex/image-20210915232257650.png)
 
 ​	
-{% note info %}
-## 如何编译 CA 2022 HW6 的那一堆latex？
+## How to use `minted` package in latex
 
-首先，你要编译的是main.tex，但是直接编译可能会报错，报错内容与 `Package minted` 有关。按照下面的来。
-{% endnote %}
-
-## Latex 中 minted 包的使用
-
-简单来说，minted可以借助pygments库进行代码的高亮，用法是
+In short, `minted` can highlight codes with the help of `pygments`. It can be used with
 ```latex
 \usepackage{minted}
 ......
@@ -245,24 +242,26 @@ tags:
 \end{minted}
 ```
 
-它不能直接使用，需要先安装python3和pygments库
+It cannot be use directly. You need to install `python3` and `pygments` first.
 
-```
+```sh
 pip3 install pygments
 ```
 
-并且pygmentize必须要在环境变量中
+And you have to make sure `pygmentize` is in your PATH.
 
 ![](09_vscode_latex/pygmentize.png)
 
-修改 settings.json 中 latex 的相关配置，添加 pdflatex 编译命令的参数 `--shell-escape`
+Modify corresponding configuration in VSCode `settings.json`, add  `--shell-escape` to the args in PDFLatex, like the following:
 
 ![](09_vscode_latex/shell-escape.jpg)
 
-然后在自动清理的文件类型中，取消 .aux 文件（这个文件记录了所有的引用编号，如果还没编译完成就删除，可能出现 `\ref` 的引用编译出 `??` 的问题）
+Then remove `.aux` files from auto-clean file types. (`.aux` file records all the reference numbers, without which references `\ref` may be compiled to `??`)
 
 ![](09_vscode_latex/aux.png)
 
-编译时使用pdflatex编译`main.tex`即可。
+
+
+Then you should be able to use `minted`!
 
 ![](09_vscode_latex/compileWithPdftex.jpg)

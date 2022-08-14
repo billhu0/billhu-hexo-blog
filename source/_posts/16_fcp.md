@@ -13,7 +13,7 @@ tags:
 
 In general, our devices' IP address are local addresses or virtual, and we cannot visit our local devices without using a NAT-penetration tool.
 
-There are some free NAT-penetration tools online (如向日葵、花生壳、cpolar), but they are generally unstable. If you have a device with a public IP address (such as a server), you can use 'frp' to penetrate the NAT.
+There are some free NAT-penetration tools online (like cpolar), but they are generally unstable. If you have a device with a public IP address (such as a server), you can use 'frp' to penetrate the NAT.
 
 Frp is a reverse proxy which can forward a port of your local server to a public server.
 

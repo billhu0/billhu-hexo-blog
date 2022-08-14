@@ -1,7 +1,7 @@
 ---
-title: 如何安装WSL
+title: "How to install WSL?"
 date: 2021-10-21 23:11:00
-description: 记录一下我安装WSL的过程，以及遇到的一些报错
+description: "How did I install WSL, and what errors did I encountered?"
 catagories:
 - windows
 tags:
@@ -16,16 +16,16 @@ tags:
 
 ## Step1. Upgrade Windows if needed.
 
-确保升级到 Windows 10 版本 2004 或 内部版本 19041 及以上，或 Windows 11。更老的版本不支持 WSL 2。
+Make sure you have upgraded to Windows 10 version **2004** or insider preview **19041** or higher. Older versions of Windows does not support WSL2.
 
-<div class="note note-info">
-<p>查看Windows 10/11 版本号：按下Win+R键，执行<code>winver</code>命令</p>
-</div>
+{% note info %}
+Press Win+R, execute `winver` to check your windows 10/11 version number.
+{% endnote %}
 
 
-## Step2. Start to install.
+## Step2. Start installing.
 
-In cmd(administrator) or powershell(administrator) , run 
+In Cmd(administrator) or Powershell(administrator) , run 
 
 ```shell
 wsl --install
@@ -35,33 +35,35 @@ Then, open Microsoft Store, and search for `Ubuntu 20.04` and download.
 
 Launch it after the download is complete. You will see a command window with 'installing...'.
 
-### 部分报错代码及解决方法：
 
-####  `0xc03a011a`报错：
+### Possible error code and solution:
 
-1. 在资源管理器中找到`C:\Users\YOUR_USER_NAME\AppData\Local\Packages`，其中`YOUR_USER_NAME`是你的用户名
-2. 找到以 `CanonicalGroupLimited.Ubuntu18.04onWindows` 开头的那个文件夹，右键，点击“属性”，“高级”
-3. 取消勾选“压缩内容以节省磁盘空间“
-4. 点击“确定”，然后再次尝试安装
+####  `0xc03a011a`:
 
-#### `0x80370102`报错：
+1. Find `C:\Users\YOUR_USER_NAME\AppData\Local\Packages` in file explorer, where `YOUR_USER_NAME` is your username.
+2. Find the folder begin with `CanonicalGroupLimited.Ubuntu18.04onWindows`, right click on it, click 'properties', click 'advanced'
+3. Deselect "压缩内容以节省磁盘空间"
+4. Click "Confirm" and try to install again
 
-<div class="note note-success">
-<p>如果你在mac上的bootcamp windows中安装wsl，并出现了这一步报错，请先进入macOS并从”系统偏好设置“中的”启动磁盘“重启进入windows（不要直接开机进入windows）。进入windows后，打开任务管理器 -> 性能 -> CPU，确保”虚拟化“是开启状态，再进行下一步。</p>
-</div>
+#### `0x80370102`:
 
-1. 检查是否开启了VT虚拟化：在“任务管理器”->“性能”->"CPU"中查看“虚拟化”是否已开启，如果没有开启，需要进入BIOS开启这个功能
-2. 检查一些相关的windows功能是否已开启：按住win+Q键搜索“启用或关闭windows功能”
-   - Windows10：确保打开`Hyper-V`, `Virtual Machine Platform`, `Windows Subsystem for Linux`三项
-   - Windows11：确保打开`适用于Linux的Windows子系统`一项
+{% note success %}
+If you are installing wsl on a **Mac** using bootcamp windows, and got this error, you should enter macOS first, and reboot to windows from 'startup disk' in 'system preferences' (instead of entering windows directly after pressing the power on button). After you have entered windows, go to task manager -> performance -> CPU, and make sure 'virtualization' is 'on'.
+{% endnote %}
+
+
+1. Check if you have enabled VT virtualization: In "Task manager" -> "Performance" -> "CPU", check if "virtualization" is on. If not, enter BIOS and enable this feature.
+2. Check if corresponding windows features are enabled: Press win+Q and search for "enable or disable windows features"
+   - Windows10：Make sure `Hyper-V`, `Virtual Machine Platform`, `Windows Subsystem for Linux` are enabled.
+   - Windows11：Make sure `Windows subsystem for linux` is enabled.
 3. 打开Powershell(管理员)，执行以下命令：
 
 ```powershell
-# 启用"适用于Linux的Windows子系统“
+# Enable "Windows subsystem for linux"
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-# 启用”虚拟机平台“
+# Enable "Virtual Machine Platform"
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-# 下载Linux内核更新包
+# Install linux kernal update 
 https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.ms
 ```
 

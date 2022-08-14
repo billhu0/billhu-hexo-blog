@@ -11,7 +11,7 @@ tags:
 
 ## Some sort algorithms
 
-### 1. Mergesort 归并排序
+### 1. Mergesort
 
 ```c++
 /* Normal Mergesort */
@@ -69,7 +69,7 @@ mergesort(arr, 15);
 
 
 
-### 2. Quicksort  快排
+### 2. Quicksort
 
 ```c++
 template <class T>
@@ -104,7 +104,7 @@ quicksort(arr, 15);
 
 
 
-## Some data structures （部分数据结构）
+## Some data structures
 
 ### 1. Simple `std::vector` with only `pushback` and `clear`
 
@@ -157,17 +157,17 @@ int main(){
 
 
 
-### 3. Disjoint sets 并查集
+### 3. Disjoint sets 
 
 - Disjoint set with path compression. 
 
-  仅使用路径压缩的并查集实现。虽然没有使用 Union by size (按秩合并)，复杂度达不到$O(\alpha(n))$，但实测此方法已经足够快。
+  Implemented with only path compression. Despite union by size is not enabled, which means it cannot achieve $O(\alpha(n))$ time complexity, it is fast enough in practice.
 
 ```c++
 #define MAX_NUM 1000
 
 int parent[MAX_NUM];
-// Initialize 初始化
+// Initialize
 void init(){
     for (int i = 0; i < MAX_NUM; i++){
         parent[i] = i;
@@ -183,7 +183,7 @@ void set_union(int i, int j){
 }
 ```
 
-- (此方法摘自Gkxx的文章 [CS101 2021Fall PA3,4 题解](https://blog.csdn.net/qq_39677783/article/details/122613401?spm=1001.2014.3001.5501) ) 
+- (Excerpted from Gkxx's article [CS101 2021Fall PA3,4 题解](https://blog.csdn.net/qq_39677783/article/details/122613401?spm=1001.2014.3001.5501) ))
 
   启发式合并。也能保证高度控制在$O(\log n)$
 
@@ -217,9 +217,9 @@ void set_union(int i, int j){
 
 
 
-## Common coding snippets 常用代码片段
+## Common coding snippets 
 
-### QuickRead  快读
+### QuickRead 
 
 ```c++
 template <typename IntType = int>
@@ -253,16 +253,16 @@ quickRead(b, c, d);  // Same as 'std::cin >> b >> c >> d'
 
 
 
-### `bits/stdc++.h` 万能头  
+### `bits/stdc++.h` omnipotent header  
 
-（需要说明的是，本人非常非常不喜欢这两句代码。前者会明显拖慢编译速度，不支持某些编译器，且并不属于C++标准。**信竞除外**）
+(Note that, personally, I STRONGLY DISLIKE the following two lines of code. The first line will significantly reduce compilation speed, not supported by some compiler, and is not in C++ standard. The second line will lead to potential problems. **Except for ACM and OI.**)
 
 ```c++
 #include <bits/stdc++.h>
 using namespace std;
 ```
 
-Clang、MSVC等除gcc外的编译器不支持 `bits/stdc++.h`。如果需要使用，可以先找到编译器include文件的路径，新建文件夹`bits`，新建文件`stdc++.h`，往里面写以下内容：
+Clang, MSVC may not support `bits/stdc++.h`. If you want to use it, you can find the include path of the compiler first, add a new folder `bits`, and create a file `stdc++.h` with the following:
 
 ```c++
 // C++ includes used for precompiling -*- C++ -*-
@@ -413,20 +413,17 @@ Clang、MSVC等除gcc外的编译器不支持 `bits/stdc++.h`。如果需要使�
 ## Boom !
 
 
-
-### 1. 如何卡编译
-
-- include 一个include不完的东西
+### Include something that is endless
 
 ```c++
-#include </dev/random>  // 可用于几乎所有linux和macOS环境
+#include </dev/random>  // for linux and macOS
 ```
 
 ```c++
-#include <CON>   // windows环境
+#include <CON>   // for Windows
 ```
 
-- 同样，也可以卡预处理过程
+### Similarly, we can stuck the preprocessing
 
 ```c++
 int f(int num) {
@@ -449,67 +446,5 @@ int main(int argc, char const *argv[]){
 }
 ```
 
-上面的代码编译会占用极大量内存，且耗时极长。
-
-
-
-### 2."88w行代码"
-
-![](08_algorithm/88w_i.jpg)
-
-
-
-那么如何写一个「88w行代码生成器」呢？
-
-```c++
-#include <iostream>
-std::string reverse(int num){
-    std::string reverse_res;
-    int n = 0;
-    while (num){
-        reverse_res += (char) (num % 10)+48;
-        num = num / 10;
-        n++;
-    }
-    return reverse_res;
-}
-int main(void){
-    std::ios::sync_with_stdio(false);
-    std::cout << "#include <stdio.h>\n\n";
-    std::cout << "int main(void){\n";
-    std::cout << "    " << "int x;\n";
-    std::cout << "    " << "scanf(\"%d\", &x);\n";
-    std::cout << "    " << "switch(x){\n";
-    for (int i = 1; i <= 99999; i++){
-        std::cout << "        " << "case " << i << ":\n";
-        std::string r = reverse(i);
-        std::cout << "            " << "printf(\"倒过来是 " << r << "\\n\");\n";
-        std::cout << "            " << "printf(\"" << r.length() << " 位数\\n\");\n";
-        std::cout << "            " << "printf(\"个位数是 " << r[0] << "\\n\");\n";
-        if (r.length() >= 2){
-            std::cout << "            " << "printf(\"十位数是 " << r[1] << "\\n\");\n";  
-            if (r.length() >= 3){
-                std::cout << "            " << "printf(\"百位数是 " << r[2] << "\\n\");\n";  
-                if (r.length() >= 4){
-                    std::cout << "            " << "printf(\"千位数是 " << r[3] << "\\n\");\n";  
-                    if (r.length() >= 5){
-                        std::cout << "            " << "printf(\"万位数是 " << r[4] << "\\n\");\n";  
-                    }
-                }
-            }
-        }
-        std::cout << "            " << "break;\n";
-    }
-    std::cout << "    }\n";
-    std::cout << "    return 0;\n";
-    std::cout << "}\n";
-    return 0;
-}
-```
-
-将上面程序的输出写到一个`.c`文件即可得到88w行代码
-
-```shell
-./xxx > ./output.c
-```
+When compiling the above program, the compiler will use tremendous amount of memory and takes an EXTREMELY long time.
 

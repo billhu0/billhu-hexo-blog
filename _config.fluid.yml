@@ -1019,15 +1019,15 @@ links:
       avatar: "/img/link-wuyh.jpg"
     }
     - {
-      title: "Venus (full)",
-      intro: "http://venus.billhu.cn",
-      link: "http://venus.billhu.cn",
+      title: "Venus",
+      intro: "RISC-V emulator",
+      link: "https://venus.billhu.cn",
       avatar: "/img/link-venus.jpeg"
     }
     - {
       title: "minesweeper",
-      intro: "http://mines.billhu.cn",
-      link: "http://mines.billhu.cn",
+      intro: "Online minesweeper in JavaScript.",
+      link: "https://tools.billhu.cn/minesweeper",
       avatar: "/img/link-minesweeper2.ico"
     }
 

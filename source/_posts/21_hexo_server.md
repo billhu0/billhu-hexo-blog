@@ -22,9 +22,10 @@ You can use hexo to build your own website and blog, and then deploy it using `g
 
 ## Step 1. Init a git repository on the server
 
-<div class="note note-success">
-<p>Many tutorials will tell you to create a user named 'git', disable its shell access, and modify <code>sudoers</code> list. But these steps are accually unnecessary. You can directly configure the server with your normal user (<code>$USER</code>).</p>
-</div>
+{% note success %}
+Many tutorials will tell you to create a user named 'git', disable its shell access, and modify `sudoers` list. But these steps are actually unnecessary. You can directly configure the server with your normal user (`$USER`).
+{% endnote %}
+
 
 ### Create a git repository
 

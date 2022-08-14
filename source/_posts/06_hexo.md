@@ -13,14 +13,14 @@ tags:
 
 ## Preamble
 
-Maybe you want to have your own website and your own blog, but don't want to spend money maintaining a server, or don't have enough energy to start from the beginning making a website?  Well, you can build your blog with  `hexo`  and  `github pages` , just like how this tutorial is published, which is completely free and easy to use! 
+Maybe you want to have your own website and your own blog, but don't want to start from the beginning?  Well, you can build your blog with  `hexo`  and  `github pages` , just like how this tutorial is published, which is completely free and easy to use! 
 
 Follow these steps, and you can have your own blog! This is also how this blog is created.
 
 ## Step 1. Install  `node.js` and  `git`
 
-On macOS, `git` should be preinstalled as long as you have XCode downloaded, while
-`node.js` can be installed with `brew`:
+On macOS, `git` should be preinstalled as long as you have Xcode downloaded, while
+`nodejs` can be installed with `brew`:
 ```shell
 brew install node
 ```
@@ -30,16 +30,16 @@ You can execute `node -v` , `npm -v` , `git --version` to check if you have corr
 
 ### Register and set username & email
 
-First, of course, you need to register a GitHub account (with your email). Note that the username will be your prefix of the website, so choose the username carefully. For instance, my username is `billhu0` and my website (just the one you are looking) is `billhu0.github.io`.
+First, of course, you need to register a GitHub account (with your email). Note that the username will be your prefix of the website, so choose the username carefully. For instance, my username is `billhu0` and my website domain will be `billhu0.github.io`.
 
 Then, go to terminal and run the following:
 
 ```shell
-git config --global user.name "Your_github_name"
-git config --global user.email "Your_github_email"
+git config --global user.name "<Your_github_name>"
+git config --global user.email "<Your_github_email>"
 ```
 
-Replace `"Your_github_name"` and `"Your_github_email"` with your github name and github email. 
+Replace `<Your_github_name>` and `<Your_github_email>` with your github name and github email. 
 
 ### Add an SSH public key
 
@@ -76,28 +76,30 @@ type `yes` when seeing 'Are you sure .... ', and wait for responce.
 On Github website, click the '+' icon on the top-right of the toolbar, and select 'new repository'.
 
 Repository name:  `your_username.github.io`, e.g, `billhu0.github.io`.
+
 Mark the checkbox 'initialize this repository with a README'.
+
 Description: No need to write.
 
-HTTPS will be automatically enabled after that, and your blog address is `https://your_username.github.io`.
+Your blog address is `https://your_username.github.io`.
 
 ## Step 4. Build Hexo on your local environment
 
-### Install hexo with npm (nodejs package manager)
+### Install hexo with npm
 
 In terminal, execute 
 ```shell
 sudo npm install -g hexo
 ```
 
-If you are in China and the download speed is slow, you can use tencent mirror source by entering 
+If you are in China and suffers from the low network speed, you can use tencent mirror source by entering 
 ```shell
 npm config set registry http://mirrors.cloud.tencent.com/npm/
 ```
 
 ### Initalize hexo
 
-Choose a directory (this directory will be your local hexo directory, so choose it carefully). In the future, almost every operation should be done in this directory, so you are suggested to backup it regularly.
+Choose a local directory on your computer. In the future, almost every operation should be done in this directory, so you are suggested to backup it regularly.
 
 In terminal, 'cd' to this directory, and run 
 ```shell
