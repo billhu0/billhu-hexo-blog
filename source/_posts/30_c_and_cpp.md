@@ -81,7 +81,7 @@ int main(){
 ```
 
 
-## C++: Compile time Fibonacci 编译期计算Fibonacci数列
+## C++: Compile time Fibonacci 
 
 ```C++
 #include <iostream>
@@ -163,7 +163,7 @@ int main(){
 ```
 
 
-## QuickRead  快读
+## QuickRead 
 
 ```c++
 template <typename IntType = int>

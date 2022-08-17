@@ -1,7 +1,7 @@
 ---
-title: Homebrew 配置中科大源
+title: Homebrew USTC source
 date: 2022-02-08 20:11:00
-description: 使用中科大源安装配置 Homebrew，并关闭homebrew自动更新
+description: Install and configure Homebrew with USTC source and turn off homebrew auto-update.
 categories: 
 - macOS
 tags:

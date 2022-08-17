@@ -6,7 +6,7 @@ layout: about
 
 ## About Me
 
-Sophomore at Shanghaitech
+Junior at ShanghaiTech University.
 
 ## About this blog
 
