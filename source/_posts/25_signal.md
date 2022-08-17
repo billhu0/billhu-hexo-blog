@@ -915,4 +915,4 @@ $$
 
 ![](25_signal/ZT-pairs.jpeg)
 
-{% endnote %}Ò
+{% endnote %}
