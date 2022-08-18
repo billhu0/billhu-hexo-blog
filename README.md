@@ -2,20 +2,20 @@
 
 ## What is this repo about?
 
-Welcome to my blog! It is created with the help of 'hexo', and used the theme 'fluid'. This repo is the root directory of this blog base, mainly for my backup use.
+Welcome to my blog! It is created with 'hexo' and theme 'fluid'. This repo is the blog base, mainly for my backup use. You may also use it to help you build yours.
 
 ## Bill Hu's Blog
 
 **Domain**: **[https://billhu.cn](https://billhu.cn)**
 
-Also available on some other static website hosting websites: 
+Also available on: 
 
 - [https://billhu0.github.io](https://billhu0.github.io)
 - [https://billhu0.vercel.app](https://billhu0.vercel.app)
 
 Thanks for visiting!
 
-## How can I use this repository?
+## How to use this repository?
 
 - Step1: Clone or download
 
@@ -30,4 +30,5 @@ Thanks for visiting!
   npm install
   ```
   
-- Step3: You are done! Write articles in `./source/_posts/`, and deploy with command `hexo cl && hexo g && hexo d`
+- Step3: You are done! Write articles in `./source/_posts/`, and deploy with command `hexo cl && hexo g && hexo d`.
+
