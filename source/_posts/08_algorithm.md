@@ -1,7 +1,7 @@
 ---
 title: Algorithm templates (C++)
 date: 2021-11-11 21:32:00
-description: Some c++ code snippets here
+description: Some algorithm implementation and c++ code snippets here
 categories: 
 - C++
 tags:
@@ -14,7 +14,8 @@ tags:
 ### 1. Mergesort
 
 ```c++
-/* Normal Mergesort */
+// Normal Mergesort (templated)
+
 template <class T>
 void __mergesort(T src[], int l, int r, T out[]){
     if ( l >= r ) return;
@@ -36,7 +37,10 @@ void mergesort(T src[], int n){
     delete[] arrout;
 }
 
-// MERGESORT WITH CUSTOMIZED COMPARATOR
+```
+
+```c++
+// mergesort with customized comparator (e.g. 'operator<' )
 template <class T, class Compare>
 void __mergesort(T src[], int l, int r, T out[], Compare comp){
     if ( l >= r ) return;
@@ -116,8 +120,8 @@ public:
     int size = 0;
     int array[MAX_NUM];
     void push_back(int given_value) { array[size++] = given_value; }
-    void clear()                    { size = 0; }
-    int& operator[](int i)          { return array[i]; }
+    void clear() { size = 0; }
+    int& operator[](int i) { return array[i]; }
 };
 ```
 
@@ -150,8 +154,9 @@ int main(){
     queue.push(23);
     std::cout << queue.pop() << ' ';
     queue.push(200);
-    while (queue.is_not_empty())
+    while (queue.is_not_empty()){
         std::cout << queue.pop() << ' ';
+    }
 }
 ```
 
