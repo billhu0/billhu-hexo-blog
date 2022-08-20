@@ -9,16 +9,16 @@ tags:
 - Ubuntu
 ---
 
-<div class="note note-info">
-<p>本文适用于 `x86_64` 的 Ubuntu Desktop 或 Ubuntu Server。</p>
-</div>
+{% note info %}
+本文适用于 `x86_64` 的 Ubuntu Desktop 或 Ubuntu Server
+{% endnote %}
 
 
 ## apt 换源
 
-<div class="note note-danger">
-<p>不建议用清华源！</p>
-</div>
+{% note info %}
+<p>不建议用清华源，建议中科大源、阿里源等</p>
+{% endnote %}
 
 如果是有图形界面的ubuntu，可以直接进入设置换源，如图：
 

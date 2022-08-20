@@ -7,12 +7,12 @@ tags:
 - Linux
 ---
 
-<p class="note note-danger">
+{% note danger %}
   Some linux commands listed here are only available on Ubuntu/Debian. Other linux distributions may have differences.
-</p>
+{% endnote %}
 
 
-# Symbols like `|`  `||` `&&` 
+# `|`  `||` `&&` symbols 
 
 - `&&`: do the latter command only if the former command succeeds. E.g. `echo 1 && echo "success"`
 - `||`: do the latter command only if the former command fails. E.g. `cat xxx || echo "fail"`
@@ -23,19 +23,19 @@ tags:
   - E.g. `ifconfig | grep inet`
 
 
-# Symbols related to `$`
+# `$`-related symbols
 
-#### Variables
+### Variables
 
 - `$xxx` or `${xxx}` fetches the value of a variable or the environment variable
 
-#### Calculate the result
+### Calculate the result
 
 - `$( )` and ` `` ` (back quote) executes the command inside the bracket or back quote, and returns the output of that command 
 
 - `$(( ))` `$[]` calculates the formula
 
-#### Others
+### Others
 
 - `$#` indicates 'argc', the count of arguments
 - `$n` is the value of the n-th argument, where n=1,2,...,9
@@ -57,9 +57,9 @@ tags:
 
 `scp` command can be used to copy files between local and remote, which is based on `ssh` protocal.
 
-### Copy local files to a remote host
+## Copy local files to a remote host
 
-#### Copy file(s)
+### Copy file(s)
 
 - Copy local files to remote host's specified directory (the file name keeps same)
 
@@ -73,7 +73,7 @@ scp path/to/local/file RemoteUsrName@IP:/path/to/remote/folder/
 scp path/to/local/file RemoteUsrName@IP:/path/to/remote/file
 ```
 
-#### Copy directory
+### Copy directory
 
 - Copy a directory, but hidden files (such as `.git` directory) will not be copied
 
@@ -87,7 +87,7 @@ scp path/to/local/file RemoteUsrName@IP:/path/to/remote/file
 scp -rp /path/to/local/folder RemoteUsrName@IP:/path/to/remote/folder/
 ```
 
-### Download remote files to local directory
+## Download remote files to local directory
 
 To download files, we only need to swap the last two arguments (file or directory path) in the commands. For example:
 
@@ -104,7 +104,6 @@ If you want to use another port, you need to add `-P xxx` after `scp` command, f
 
 {% note success %}
 Want to avoid typing password everytime you use `scp`? You need to configure public key authentication for ssh. For reference, {% post_link 14_ssh_keygen %}
-
 {% endnote %}
 
 

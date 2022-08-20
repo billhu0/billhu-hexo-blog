@@ -11,9 +11,6 @@ tags:
 ---
 
 
-
-# How to install WSL on Windows
-
 ## Step1. Upgrade Windows if needed.
 
 Make sure you have upgraded to Windows 10 version **2004** or insider preview **19041** or higher. Older versions of Windows does not support WSL2.

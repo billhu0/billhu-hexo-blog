@@ -411,10 +411,6 @@ Clang, MSVC may not support `bits/stdc++.h`. If you want to use it, you can find
 
 ```
 
-
-
-
-
 ## Boom !
 
 

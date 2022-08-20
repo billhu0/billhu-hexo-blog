@@ -9,9 +9,9 @@ tags:
 - brew
 ---
 
-## Install Homebrew
+## Install Homebrew or Switch to USTC source
 
-Add the following to your shell's environment path.
+Add the following to your shell's environment path. For instance, if you use bash, add to the `~/.bashrc` file. If you use 'zsh' and 'oh-my-zsh', add to `~/.zshrc` file.
 
 ```shell
 export HOMEBREW_NO_AUTO_UPDATE=true
@@ -19,8 +19,6 @@ export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 ```
-
-For instance, if you use bash, add to the `~/.bashrc` file. If you use 'zsh' and 'oh-my-zsh', add to `~/.zshrc` file.
 
 Then run the homebrew install script. (If you have already installed and only needs to change the source, just skip the following line)
 

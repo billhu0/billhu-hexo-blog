@@ -13,9 +13,9 @@ tags:
 
 ## Preamble
 
-Maybe you want to have your own website and your own blog, but don't want to start from the beginning?  Well, you can build your blog with  `hexo`  and  `github pages` , just like how this tutorial is published, which is completely free and easy to use! 
+Maybe you want to have your own website and your own blog, but don't want to start from the beginning?  Well, you can build your blog with  `hexo`  and  `github pages`, which is free and easy to use! 
 
-Follow these steps, and you can have your own blog! This is also how this blog is created.
+Follow these steps and you can have your own blog!
 
 ## Step 1. Install  `node.js` and  `git`
 
@@ -24,7 +24,7 @@ On macOS, `git` should be preinstalled as long as you have Xcode downloaded, whi
 ```shell
 brew install node
 ```
-You can execute `node -v` , `npm -v` , `git --version` to check if you have correctly installed these packages.
+You can execute `node -v` , `npm -v` , `git --version` to check if you have correctly installed these.
 
 ## Step 2. Prepare your GitHub Account.
 
@@ -92,14 +92,14 @@ In terminal, execute
 sudo npm install -g hexo
 ```
 
-If you are in China and suffers from the low network speed, you can use tencent mirror source by entering 
+If you are in China and experience the low network speed, you can use tencent mirror source by entering 
 ```shell
 npm config set registry http://mirrors.cloud.tencent.com/npm/
 ```
 
 ### Initalize hexo
 
-Choose a local directory on your computer. In the future, almost every operation should be done in this directory, so you are suggested to backup it regularly.
+Choose a local directory on your computer. In the future, almost every operation will be done in this folder, so you may backup it regularly.
 
 In terminal, 'cd' to this directory, and run 
 ```shell
@@ -116,7 +116,7 @@ Now your blog has been created by hexo. Run the following command in terminal
  hexo s   # this is the same as 'hexo server'
 ```
 
-The `hexo g` command transfers your raw data (including posts, pages in markdown and other formats) into something that can be viewed on web. 
+The `hexo g` command transfers your raw data (including posts, pages in markdown and other formats) into html, css and js files that can be viewed on web. 
 
 And `hexo s` can let you preview the website by visiting `localhost://4000` with your browser. If the command fails, enter `npm install hexo-server --save` and try again.
 

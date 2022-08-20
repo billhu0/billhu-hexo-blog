@@ -11,8 +11,6 @@ tags:
 
 # [Mac/Linux/Win] Write LaTeX with VSCode or Jetbrains IDE
 
-
-
 ## Part 1. Install LaTeX
 
 ### macOS: Install MacTex （TexShop）
