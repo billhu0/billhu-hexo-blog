@@ -17,7 +17,7 @@ tags:
 ## apt 换源
 
 {% note info %}
-<p>不建议用清华源，建议中科大源、阿里源等</p>
+不建议用清华源，建议中科大源、阿里源等
 {% endnote %}
 
 如果是有图形界面的ubuntu，可以直接进入设置换源，如图：
@@ -26,7 +26,7 @@ tags:
 ![](20_ubuntu-config/ubuntu_apt_gui2.png)
 
 
-或者手动修改 `/etc/apt/sources.list` 换源，以中科大源为例：
+或者手动修改 `/etc/apt/sources.list` 换源。以中科大源为例：
 
 对于 ubuntu 20.04（版本号focal），可使用下面的源
 

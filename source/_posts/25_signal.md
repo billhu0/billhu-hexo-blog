@@ -12,7 +12,7 @@ tags:
 
 # Part 1. Systems
 
-## 1.2 Transformation of Indepedent Variable 自变量的变换
+## 1.2 Transformation of Independent Variable 自变量的变换
 
 ### 1.2.1 自变量变换举例
 
@@ -26,7 +26,7 @@ To perform transformation $x(t) \rightarrow x(\alpha t + \beta)$, you have to **
 
 E.g. $x(t) \rightarrow x(t + \beta) \rightarrow x(\alpha t + \beta)$
 
-### 1.2.3 Even and odd func 偶信号与奇信号
+### 1.2.3 Even and odd signal 偶信号与奇信号
 
 $$
     Ev\{x(t)\} = \frac{1}{2} \left(
@@ -93,7 +93,7 @@ $$
 - Unit impulse function $\delta(t)$ and $u(t)$
   $$
   u(t) = \begin{cases}
-      0, & t < 0\\
+      0, & n < 0\\
       1, & n > 0
   \end{cases}, \ \ \  
   \delta(t) = \frac{d}{dt}u(t)
@@ -101,9 +101,9 @@ $$
 
 ## 1.6 Properties of System 基本系统性质
 
-**1. Memoryness**: output only depends on input at the same time 当前输出仅依赖当前输入
+**1. Memoryless**: output only depends on input at the same time 当前输出仅依赖当前输入
 
-**2. Invertibility and Inverse System**: distinct inputs lead to distinct outputs 不同输入导致不同输出，输入和输出一一对应
+**2. Invertibility**: distinct inputs lead to distinct outputs 不同输入导致不同输出，输入和输出一一对应
 
 **3. Causality**: output doesn't depend on future 不依赖未来的输入，仅依赖过去和现在的输入
 
@@ -319,7 +319,7 @@ $$
 
 ### Decomposition of Even and Odd
 
-In general, $a_k$ is complex, therefore this is not read and imaginary decomposition. However, this is the **even and odd decomposition**.
+In general, $a_k$ is complex, therefore this is not real and imaginary decomposition. However, this is the **even and odd decomposition**.
 
 不是实部和虚部的分解，而是偶函数与奇函数的分解。
 
