@@ -1,7 +1,7 @@
 ---
-title: How to make hexo render LaTeX formulas correctly
+title: How to allow hexo render LaTeX formulas correctly
 date: 2022-01-16 18:38:00
-description: Inserting LaTeX formulas in your hexo blog (theme 'fluid') and render it correctly, using KaTeX renderer.
+description: Inserting LaTeX formulas in your hexo blog and render it correctly, using KaTeX renderer.
 math: true
 categories: 
 - hexo
@@ -12,7 +12,7 @@ tags:
 
 ## How to render $\LaTeX$ formulas in hexo blog (theme ‘fluid’)
 
-By default, $\LaTeX$ formulas are not rendered and cannot be correctly displayed. To fix this, the first step is to uninstall the default renderer and install $\KaTeX$ renderer.  ( $\mathrm{mathjax}$ is also an alternative, but it cannot render some complex formulas). 
+By default, $\LaTeX$ formulas are not rendered and cannot be correctly displayed. To fix this, the first step is to uninstall the default renderer and install $\KaTeX$ renderer.  ( $\mathrm{mathjax}$ is also an alternative, but it may fail to render some complex formulas). 
 
 In terminal, `cd` to your hexo directory, and run the following
 

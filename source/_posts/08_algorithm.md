@@ -166,7 +166,7 @@ int main(){
 
 - Disjoint set with path compression. 
 
-  Implemented with only path compression. Despite union by size is not enabled, which means it cannot achieve $O(\alpha(n))$ time complexity, it is fast enough in practice.
+  Implemented with only path compression (without 'union by size'). It cannot achieve $O(\alpha(n))$ time complexity, but it is fast enough in practice.
 
 ```c++
 #define MAX_NUM 1000
