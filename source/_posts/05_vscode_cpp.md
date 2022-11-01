@@ -63,7 +63,7 @@ tags:
 
 ![](05_vscode_cpp/newFile.png)
 
-文件内放入以下内容：
+文件内填写以下内容：
 
 `launch.json`
 
@@ -78,7 +78,6 @@ tags:
             "preLaunchTask": "g++ compile",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
             "args": [],
-            // "environment": [],
             "cwd": "${workspaceFolder}",
         }
     ]
