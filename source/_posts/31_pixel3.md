@@ -1,5 +1,5 @@
 ---
-title: Flash Android 12 on Pixel 3
+title: How to install Android 12 on Google Pixel 3
 date: 2022-06-27 11:32:00
 description: Flash official android, or lineageOS, pixel expericnce, etc, on Google Pixel 3.
 categories: 

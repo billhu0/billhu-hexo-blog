@@ -1,7 +1,7 @@
 ---
 title: HomeAssistant on Raspberry Pi 
 date: 2022-04-19 16:44:18
-description: How to install and configure homeassistant on raspberry pi
+description: How to set up homeassistant on a raspberry pi
 tags: 
 - Linux
 - Homeassistant
