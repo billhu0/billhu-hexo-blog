@@ -3,6 +3,7 @@ title: ssh-keygen 是什么？
 date: 2022-02-05 12:38:00
 description: ssh-keygen可以用来生成ssh的秘钥和公钥。通常可以用来自动登录远程服务器，这样可以省去每次ssh时手动输入密码的麻烦；以及使用SSH协议访问git仓库。
 categories: 
+- Code
 - Linux
 tags:
 - ssh

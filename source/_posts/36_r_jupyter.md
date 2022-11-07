@@ -3,6 +3,7 @@ title: "Using R programming language in jupyter notebook"
 date: 2022-10-12 10:48:00
 description: Install R kernal and use R language in jupyter notebook
 categories: 
+- Code
 - R
 tags:
 - R

@@ -2,6 +2,7 @@
 title: Raspi config
 date: 2021-09-12 23:16:05
 categories: 
+- Code
 - Raspi&Arduino
 tags: 
 - Linux

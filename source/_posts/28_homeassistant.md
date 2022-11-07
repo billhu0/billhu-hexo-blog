@@ -8,6 +8,7 @@ tags:
 - HomeKit
 - RaspberryPi
 categories: 
+- Code
 - Raspi&Arduino
 ---
 

@@ -6,6 +6,7 @@ tags:
 - git
 - linux 
 categories: 
+- Code
 - git
 ---
 

@@ -2,6 +2,7 @@
 title: HomeBridge on raspberry pi
 date: 2021-09-13 17:09:49
 categories: 
+- Code
 - Raspi&Arduino
 tags: 
 - Linux

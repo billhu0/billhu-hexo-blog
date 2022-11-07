@@ -5,6 +5,7 @@ description: Uninstall vscode and remove all vscode plugins and configs
 tags: 
 - vscode
 categories: 
+- Code
 - vscode
 ---
 

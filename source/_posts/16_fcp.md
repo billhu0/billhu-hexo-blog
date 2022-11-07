@@ -3,6 +3,7 @@ title: (macOS/Linux/Windows) How to use frp for NAT-penetration
 date: 2022-02-08 21:11:00
 description: Pre-requisite：You need a server with a public IP address to do this.
 categories: 
+- Code
 - Linux
 tags:
 - Linux

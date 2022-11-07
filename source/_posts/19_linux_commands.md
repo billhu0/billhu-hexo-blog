@@ -2,7 +2,9 @@
 title: Some Linux shell commands
 date: 2022-02-10 18:21:19
 description: Never do 'sudo rm -rf /'
-categories: Linux
+categories: 
+- Code
+- Linux
 tags:
 - Linux
 ---
