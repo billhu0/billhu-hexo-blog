@@ -270,6 +270,8 @@ using namespace std;
 
 Clang, MSVC may not support `bits/stdc++.h`. If you want to use it, you can find the include path of the compiler first, add a new folder `bits`, and create a file `stdc++.h` with the following:
 
+<details>
+
 ```c++
 // C++ includes used for precompiling -*- C++ -*-
 
@@ -411,6 +413,8 @@ Clang, MSVC may not support `bits/stdc++.h`. If you want to use it, you can find
 #endif
 
 ```
+
+</details>
 
 ## Boom !
 
