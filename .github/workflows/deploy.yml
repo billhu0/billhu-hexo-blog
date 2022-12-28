@@ -21,7 +21,14 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Setup Hexo and SSH key
+      - name: Setup Hexo and render with Hexo
+        run: |
+          npm install hexo-cli -g
+          npm install
+          hexo clean
+          hexo generate
+
+      - name: Deploy to GitHub Pages
         env:
           ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
         run: |
@@ -32,16 +39,6 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.email "shhuluojia@github.com"
           git config --global user.name "billhu0"
-          npm install hexo-cli -g
-          npm install
-
-      - name: Hexo rendering 
-        run: |
-          hexo clean
-          hexo generate
-
-      - name: Deploy to GitHub Pages
-        run: |
           git clone git@github.com:billhu0/billhu0.github.io.git --depth=1
           cp -r billhu0.github.io/.git public/.git
           cd public

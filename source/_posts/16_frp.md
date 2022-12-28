@@ -12,30 +12,30 @@ tags:
 
 ## What is `frp`?
 
-In general, our devices' IP address are local addresses or virtual, and we cannot visit our local devices without using a NAT-penetration tool.
+In general, our devices' connected to the Internet does not have a public IP address. We cannot visit our local devices without using a NAT-penetration tool.
 
-There are some free NAT-penetration tools online (like cpolar), but they are generally unstable. If you have a device with a public IP address (such as a server), you can use 'frp' to penetrate the NAT.
+There are some NAT-penetration tools (like cpolar), but free tools are generally unstable, while high-quality tools comes with a high price. If you have a device with a public IP address (such as a server), you can use **frp** to penetrate the NAT.
 
 Frp is a reverse proxy which can forward a port of your local server to a public server.
 
-<div class="note note-danger">
-<p> <strong>Pre-requisite</strong>: You will need a server with a public IP address, such as a Tencent cloud server.</p>
-</div>
+{% note danger %}
+**Pre-requisite**: You will need a server with a public IP address.
+{% endnote %}
 
 ## Step1. Download `frp`
 
-`frp` requires the configuration of both the client-side and server-side. First, download `frp` according to your system architecture. In general, a linux server has arch `amd64`, Intel mac has arch `darwin_amd64`, M1-series mac has arch `darwin_arm64`, and arm linux devices including raspberry-pi runs `arm` or `arm64`. 
+`frp` requires the configuration of both the client-side and server-side. First, download `frp` according to your system architecture. In general, a linux server is `amd64`, Intel mac is `darwin_amd64`, M1-series mac is `darwin_arm64`, and arm linux devices including raspberry-pi runs `arm` or `arm64`. 
 
 Frp project address：[https://github.com/fatedier/frp/releases](https://github.com/fatedier/frp/releases)
 
-![](16_fcp/frp_github项目.png)
+![](16_frp/frp_github项目.png)
 
 
 ## Step2. Configure server-side.
 
 Extract what we downloaded, and we can see some files: (The 「s」in 'frps' stands for 'server', and 「c」 stands for 'client')
 
-![](16_fcp/frp解压.png)
+![](16_frp/frp解压.png)
 
 We need to focus on `frps` and `frps.ini`. 
 
@@ -46,17 +46,17 @@ The public server only requires setting the `bind_port` under the `[common]` tag
 bind_port = 7000
 ```
 
-<div class="note note-warning">
-<p>Remember to allow connections from port `7000` if there's a firewall.</p>
-</div>
+{% note warning %}
+Remember to allow connections from port `7000` if there's a firewall.
+{% endnote %}
 
 After that, start the `frps` service by using 
 ```shell
 ./frps -c ./frps.ini
 ```
-<div class="note note-success">
-<p>You may use `screen` or some other commands to keep `frps` running in the background.</p>
-</div>
+{% note success %}
+You may use `screen` or some other commands to keep `frps` running in the background.
+{% endnote %}
 
 ## Step3. Configure client-side local server.
 
@@ -103,11 +103,11 @@ After that, start `frpc` service by using
 ```shell
 ./frpc -c ./frpc.ini
 ```
-<div class="note note-success">
-<p>Again, you can use `screen` or some other commands to keep `frpc` running in the background.</p>
-</div>
+{% note success %}
+Again, you can use `screen` or some other commands to keep `frpc` running in the background.
+{% endnote %}
 
 After a successful connection between client-side and server-side, both can receive corresponding log messages, indicating the connection is successful.
 
-![The prompt that client-side has established a connection to the server](16_fcp/frpc输出.png)
+![The prompt that client-side has established a connection to the server](16_frp/frpc输出.png)
 
