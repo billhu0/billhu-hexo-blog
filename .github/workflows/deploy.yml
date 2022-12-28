@@ -53,7 +53,13 @@ jobs:
           cd ..
 
       - name: Deploy to billhu.cn
+        env: 
+          BILLHU_CN_DEPLOY_KEY: ${{ secrets.BILLHU_CN_SSH_PRIVATE_KEY }}
         run: |
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan [101.43.107.49]:22112 >> ~/.ssh/known_hosts
           git clone ssh://ubuntu@101.43.107.49:22112/home/ubuntu/DocumentServer/Tool_docs/hexo_nginx/blog4.git --depth=1
           cp -r billhu0.github.io/.git blog4/.git
           cd blog4
