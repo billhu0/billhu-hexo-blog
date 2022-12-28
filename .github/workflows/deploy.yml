@@ -56,7 +56,7 @@ jobs:
         env: 
           BILLHU_CN_DEPLOY_KEY: ${{ secrets.BILLHU_CN_SSH_PRIVATE_KEY }}
         run: |
-          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          echo "$BILLHU_CN_DEPLOY_KEY" > ~/.ssh/id_rsa
           chmod 700 ~/.ssh
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan [101.43.107.49]:22112 >> ~/.ssh/known_hosts
