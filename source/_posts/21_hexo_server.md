@@ -23,15 +23,15 @@ You can use hexo to build your own website and blog, and then deploy it using `g
 ## Step 1. Init a git repository on the server
 
 {% note success %}
-Many tutorials will tell you to create a user named 'git', disable its shell access, and modify `sudoers` list. But these steps are actually unnecessary. You can directly configure the server with your normal user (`$USER`).
+Many tutorials will tell you to create a user named 'git', disable its shell access, and modify `sudoers` list. These steps are actually unnecessary. You can directly configure the server with your normal user (`$USER`).
 {% endnote %}
 
 
 ### Create a git repository
 
-<div class="note note-warning">
-<p>In this tutorial, files are placed in <code>/var/www/hexo/</code> and <code>/var/repo/blog.git</code>, which you can change it to whatever you want, flexibly.</p>
-</div>
+{% note warning %}
+In this tutorial, files are placed in `/var/www/hexo/` and `/var/repo/blog.git`, which you can change it to whatever you want, flexibly.
+{% endnote %}
 
 In `/var/repo`, create an empty git repository `blog.git`: 
 
@@ -71,9 +71,9 @@ sudo mkdir -p /var/www/hexo/
 chown -R $USER:$USER /var/www/hexo/
 ```
 
-<div class="note note-info">
-<p>You can use <code>git clone YourUserName@IP:/var/repo/blog.git</code> to test the git ssh connection. </p>
-</div>
+{% note info %}
+You can use `git clone YourUserName@IP:/var/repo/blog.git` to test whether your git and ssh configuration is fine.
+{% endnote %}
 
 After configuring git-hooks, each time you push something to `blog.git`, it will execute the script, storing contents in `/var/www/hexo/`. 
 
@@ -116,18 +116,18 @@ and modifying it to
 
 ```conf
 server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
-        root /var/www/hexo;
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    root /var/www/hexo;
 
-        server_name _;
-        location / {
-                try_files $uri $uri/ =404;
-        }
+    server_name _;
+    location / {
+            try_files $uri $uri/ =404;
+    }
 }
 ```
 
-<div class="note note-info">
-<p>Normally you only need to find the line <code>root /var/xxx</code> and modify it. </p>
-</div>
+{% note info %}
+Normally you only need to find the line `root /var/xxx` and modify it.
+{% endnote %}
 

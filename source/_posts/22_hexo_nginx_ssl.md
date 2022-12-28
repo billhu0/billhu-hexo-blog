@@ -11,10 +11,9 @@ categories:
 
 ## Step 1. Get an SSL certificate
 
-<div class="note note-info">
-<p> It is necessary to get an SSL certificate before you can enable https visits for your website. Additionally, SSL certificates are issued to domain names (rather than IP addresses), so <strong>you have to own a domain name</strong> before continuing. 
-</p>
-</div>
+{% note info %}
+It is necessary to get an SSL certificate before you can enable https. Additionally, SSL certificates are issued to domain names (rather than IP addresses), so **you have to own a domain** before continuing. 
+{% endnote %}
 
 You can get a free SSL certificate for your domain name at tencent cloud, Aliyun and so on.
 
@@ -27,8 +26,9 @@ We need to focus on the `key` file and `pem` file. Upload the two files to your 
 
 ## Step 2. Configuration on nginx
 
-<div class="note note-warning">
-<p>Default configuration files path may vary on different nginx versions.</p></div>
+{% note warning %}
+Default configuration files path may vary on different nginx versions.
+{% endnote %}
 
 The nginx configuration is generally stored in `/etc/nginx/` in which the most important file is `nginx.conf`. 
 
@@ -69,9 +69,9 @@ server {
 }
 ```
 
-<div class="note note-danger">
-<p> New versions of nginx prohibited the use of <code>listen 443; ssl on;</code>. Use <code>listen 443 ssl;</code> instead. </p>
-</div>
+{% note danger %}
+New versions of nginx prohibited the use of `listen 443; ssl on;`. Use `listen 443 ssl;` instead.
+{% endnote %}
 
 At the same time, you may need to redirect http requests to https visits. You can use a '301' redirect to do this. Add the following:
 
@@ -88,9 +88,9 @@ Finally, test the configuration
 ```shell
 sudo nginx -t
 ```
-<div class="note note-warning">
-<p>If you get an error or warning, check the error logs and correct them.</p>
-</div>
+{% note warning %}
+If you get an error or warning, check the error logs and correct them.
+{% endnote %}
 
 and restart nginx to make effect.
 
