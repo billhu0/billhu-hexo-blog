@@ -59,7 +59,9 @@ jobs:
           echo "$BILLHU_CN_DEPLOY_KEY" > ~/.ssh/id_rsa
           chmod 700 ~/.ssh
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan [101.43.107.49]:22112 >> ~/.ssh/known_hosts
+          echo "[101.43.107.49]:22112 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIA+KGClTUhQ8THbk2KyyV5JyxjHHNkh1AmqrocA9HjZ" >> ~/.ssh/known_hosts
+          echo "[101.43.107.49]:22112 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCu8wlpvfNxisnD7d0oyc370k3z7K8udeWvLezTIWnnOZAmcUDWqkjf7OIOaGGHBUT3phJtqLgrcxX2s73nbGhHmYACccsAqma8QWKcfHOXZsFH4m14J0sdutvP5xAN0xl7bSUdLDoIvI1Y+KZk9Y6HyawR8+J70Q69XGkAr8GNbZ8wK5cYNorrJ3sROK641u6cVtzrgVYjuMvzeYog1xRjm0qoQv6zru8bcHfHMOKBaUWkZofG/7I/dTg5/7eDmR6QqwMVWJ67V2Y0wGTYmEoCfTgYGsW9tO6jkgQ0/RspU47caDZBXU0hDzqgkA4QLvcilBZvI7+IqWS+qM/V/G9cRPf3nbg1kG9d1Z4xHbNIy9T8QraMkHhOCr/7/0FXBXKfn3V4Iqf1cAAOh0MvfQzp29mErt2EDJ3DxcwneMfIPT5nVCj4DsM5wUAHdXQUrDICujrDKwJwFGoljwCSYmrxcWtvpUm/NN+FBqfcO8IqW9ZXbaihfsz8flNP8XzLUAE=" >> ~/.ssh/known_hosts
+          echo "[101.43.107.49]:22112 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBM6/3CN7XlDVZ5YmjFmc3RLYo9/E00HXcOlszBIjmrOXWpaWqA+d+InwNBNmm0VVEuNXdOvmB+09226a6QY5fdc=" >> ~/.ssh/known_hosts
           git clone ssh://ubuntu@101.43.107.49:22112/home/ubuntu/DocumentServer/Tool_docs/hexo_nginx/blog4.git --depth=1
           cp -r billhu0.github.io/.git blog4/.git
           cd blog4
