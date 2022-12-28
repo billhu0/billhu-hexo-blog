@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Setup Hexo
+      - name: Setup Hexo and SSH key
         env:
           ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
         run: |
@@ -35,10 +35,13 @@ jobs:
           npm install hexo-cli -g
           npm install
 
-      - name: Deploy
+      - name: Hexo rendering 
         run: |
           hexo clean
           hexo generate
+
+      - name: Deploy to GitHub Pages
+        run: |
           git clone git@github.com:billhu0/billhu0.github.io.git --depth=1
           cp -r billhu0.github.io/.git public/.git
           cd public
@@ -46,4 +49,16 @@ jobs:
           git add --all
           git commit -m "Site updated"
           git push
+          rm -rf .git
+          cd ..
+
+      - name: Deploy to billhu.cn
+        run: |
+          git clone ssh://ubuntu@101.43.107.49:22112/home/ubuntu/DocumentServer/Tool_docs/hexo_nginx/blog4.git --depth=1
+          cp -r billhu0.github.io/.git blog4/.git
+          cd blog4
+          git add --all
+          git commit -m "Site updated"
+          git push
+          rm -rf .git
           
