@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-12
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
