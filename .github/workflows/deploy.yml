@@ -28,10 +28,15 @@ jobs:
           hexo clean
           hexo generate
 
-      - name: Setup SSH private key and deploy
-        uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
+      - name: Setup SSH private key
+        uses: webfactory/ssh-agent@v0.7.0
         with:
-          SSHKEY: ${{ secrets.HEXO_DEPLOY_KEY }} 
+            ssh-private-key: ${{ secrets.HEXO_DEPLOY_KEY }}
+        # ... other steps
+
+      - name: Deploy to GitHub Pages
+        env:
+          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
         run: |
           git config --global user.email "shhuluojia@github.com"
           git config --global user.name "billhu0"
@@ -42,20 +47,6 @@ jobs:
           git commit -m "Site updated"
           git push
           cd ..
-
-      # - name: Deploy to GitHub Pages
-      #   env:
-      #     ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
-      #   run: |
-      #     git config --global user.email "shhuluojia@github.com"
-      #     git config --global user.name "billhu0"
-      #     git clone git@github.com:billhu0/billhu0.github.io.git --depth=1
-      #     cp -r billhu0.github.io/.git public/.git
-      #     cd public
-      #     git add --all
-      #     git commit -m "Site updated"
-      #     git push
-      #     cd ..
 
       # - name: Deploy to billhu.cn
       #   env: 
