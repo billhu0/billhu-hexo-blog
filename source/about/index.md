@@ -6,16 +6,18 @@ layout: about
 
 ## About Me
 
-Undergraduate at ShanghaiTech University, 2020~2024.
+I'm an undergraduate at ShanghaiTech University, 2020~2024.
 
-Major in Computer Science and Technology.
+I'm currently studying at University of Wisconsin-Madison.
+
+Major in Computer Science.
 
 ## About this blog
 
-Built with `hexo`. Theme `fluid`.
+Built with `hexo`, theme `fluid`.
 
-Domain: [billhu.cn](https://billhu.cn). 
+Domain: [www.billhu.us](https://www.billhu.us). 
 
-Also available at [billhu0.github.io](https://billhu0.github.io) and [billhu.vercel.app](https://billhu.vercel.app)
+Also available at [billhu.cn](https://billhu.cn) and [billhu.vercel.app](https://billhu0.vercel.app)
 
 GitHub address here: [GitHub Link](https://github.com/billhu0/billhu-hexo-blog)
