@@ -349,7 +349,7 @@ navbar:
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
-    - { key: "中文", link: "https://zh.billhu.cn", icon: "iconfont icon-code" }
+    # - { key: "中文", link: "https://zh.billhu.cn", icon: "iconfont icon-code" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
@@ -448,7 +448,7 @@ footer:
 
   # 国内大陆服务器的备案信息
   beian:
-    enable: true
+    enable: false
     # ICP证号
     icp_text: 沪ICP备2022004216号
     # 公安备案号，不填则只显示ICP
@@ -485,7 +485,7 @@ index:
 
     # 为空则按 hexo config.subtitle 显示
     # If empty, text based on `subtitle` in hexo config
-    text: "Happy New Year 2023!"
+    text: "Welcome!"
 
     # 通过 API 接口作为首页副标题的内容，必须返回的是 JSON 格式，如果请求失败则按 text 字段显示，该功能必须先开启 typing 打字机功能
     # Subtitle of the homepage through the API, must be returned a JSON. If the request fails, it will be displayed in `text` value. This feature must first enable the typing animation

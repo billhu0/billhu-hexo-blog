@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: "https://billhu.cn"
+url: "https://www.billhu.us"
 permalink: :year/:title/
 permalink_defaults:
 pretty_urls:
@@ -110,10 +110,10 @@ deploy:
   - type: git
     repository: git@github.com:billhu0/billhu0.github.io.git
     branch: main
-  - type: git
-    repository: 
-      site: ssh://ubuntu@101.43.107.49:22112/home/ubuntu/DocumentServer/Tool_docs/hexo_nginx/blog4.git
-    branch: master
+  # - type: git
+  #   repository: 
+  #     site: ssh://ubuntu@101.43.107.49:22112/home/ubuntu/DocumentServer/Tool_docs/hexo_nginx/blog4.git
+  #   branch: master
 
 html_minifier:
   html_minifier:  

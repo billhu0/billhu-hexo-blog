@@ -87,6 +87,14 @@ brew update
     npm update -g
     ```
 
+- OpenJDK
+
+  ```
+  brew install openjdk
+  ```
+
+  
+
 
 
 ## CLI-related miscellaneous things
