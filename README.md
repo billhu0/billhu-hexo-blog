@@ -10,10 +10,11 @@ Welcome to my blog! It is created with [hexo](https://hexo.io) and theme 'fluid'
 
 ## Bill Hu's Blog
 
-**Domain**: **[https://billhu.cn](https://billhu.cn)**
+**Domain**: **[https://www.billhu.us](https://www.billhu.us)**
 
 Also available on: 
 
+- [https://billhu.cn](https://billhu.cn)
 - [https://billhu0.github.io](https://billhu0.github.io)
 - [https://billhu0.vercel.app](https://billhu0.vercel.app)
 
