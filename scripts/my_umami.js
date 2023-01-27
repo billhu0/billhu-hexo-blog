@@ -18,6 +18,16 @@ hexo.extend.injector.register(
     'default'
 );
 
+hexo.extend.injector.register(
+    'body_end',
+    `<script type="text/javascript">
+        if (window.top.location.host == 'www.billhu.cn') {
+            window.top.location.host = 'www.billhu.us';
+        }
+    </script>`,
+    'default'
+);
+
 // Google site verification
 hexo.extend.injector.register(
     'head_end',
