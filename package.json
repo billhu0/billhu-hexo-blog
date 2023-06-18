@@ -12,6 +12,7 @@
     "version": "6.3.0"
   },
   "dependencies": {
+    "css": "^3.0.0",
     "hexo": "^6.3.0",
     "hexo-clean-css": "^2.0.0",
     "hexo-deployer-git": "^4.0.0",
