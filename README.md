@@ -14,7 +14,6 @@ Welcome to my blog! It is created with [hexo](https://hexo.io) and theme 'fluid'
 
 Also available on: 
 
-- [https://billhu.cn](https://billhu.cn)
 - [https://billhu0.github.io](https://billhu0.github.io)
 - [https://billhu0.vercel.app](https://billhu0.vercel.app)
 
