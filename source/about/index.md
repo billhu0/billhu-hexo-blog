@@ -6,11 +6,11 @@ layout: about
 
 ## About Me
 
-I'm an undergraduate at ShanghaiTech University, 2020~2024.
+🇨🇳ShanghaiTech 20-24 · 🇺🇸UW-Madison sp23
 
-I'm currently studying at University of Wisconsin-Madison.
+I'm currently a senior undergraduate of **ShanghaiTech University**, School of Information Science and Technology (SIST), majoring in Computer Science. 
 
-Major in Computer Science.
+In spring 2023, I was admitted as an exchange student by **University of Wisconsin-Madison** Visiting International Students Program.
 
 ## About this blog
 
@@ -18,6 +18,20 @@ Built with `hexo`, theme `fluid`.
 
 Domain: [www.billhu.us](https://www.billhu.us). 
 
-Also available at [billhu.cn](https://billhu.cn) and [billhu.vercel.app](https://billhu0.vercel.app)
+Also available at [billhu0.github.io](https://billhu0.github.io) and [billhu0.vercel.app](https://billhu0.vercel.app)
 
-GitHub address here: [GitHub Link](https://github.com/billhu0/billhu-hexo-blog)
+GitHub address for this blog: [GitHub Link](https://github.com/billhu0/billhu-hexo-blog)
+
+## Contact
+
+Phone: 🇺🇸(United States) +1 (916) 542-0559
+
+Github: [@billhu0](https://github.com/billhu0)
+
+LinkedIn: [Bill Hu](https://www.linkedin.com/in/bill-hu-1a6316263)
+
+Twitter: [@billhu0](https://twitter.com/billhu0)
+
+Facebook: [Bill Hu](https://www.facebook.com/luojia.hu.5)
+
+Instagram: [@bill.hu0](https://instagram.com/bill.hu0)
