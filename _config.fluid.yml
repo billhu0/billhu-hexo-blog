@@ -351,6 +351,7 @@ navbar:
     - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
     # - { key: "中文", link: "https://zh.billhu.cn", icon: "iconfont icon-code" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
+    - { key: "portfolio", link: "https://about.billhu.us", icon: "iconfont icon-code", name: "Portfolio" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -1021,13 +1022,13 @@ links:
     - {
       title: "Venus",
       intro: "RISC-V emulator",
-      link: "https://venus.billhu.cn",
+      link: "https://venus.billhu.us",
       avatar: "/img/link-venus.jpeg"
     }
     - {
       title: "minesweeper",
       intro: "Online minesweeper in JavaScript.",
-      link: "https://tools.billhu.cn/minesweeper",
+      link: "https://tools.billhu.us/minesweeper/#200",
       avatar: "/img/link-minesweeper2.ico"
     }
 

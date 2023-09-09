@@ -6,23 +6,23 @@ layout: about
 
 ## About Me
 
-🇨🇳ShanghaiTech 20-24 · 🇺🇸UW-Madison sp23
+🇨🇳ShanghaiTech 20-24 · 🇺🇸UW-Madison Sp23
 
 I'm currently a senior undergraduate of **ShanghaiTech University**, School of Information Science and Technology (SIST), majoring in Computer Science. 
 
-In spring 2023, I was admitted as an exchange student by **University of Wisconsin-Madison** Visiting International Students Program.
+In Spring 2023, I was admitted as an exchange student by **University of Wisconsin-Madison** Visiting International Students Program.
 
-## About this blog
+## About this Blog
 
-Built with `hexo`, theme `fluid`.
+This blog is built with `hexo` and theme `fluid`.
 
-Domain: [www.billhu.us](https://www.billhu.us). 
+Primary domain: [www.billhu.us](https://www.billhu.us). 
 
 Also available at [billhu0.github.io](https://billhu0.github.io) and [billhu0.vercel.app](https://billhu0.vercel.app)
 
 GitHub address for this blog: [GitHub Link](https://github.com/billhu0/billhu-hexo-blog)
 
-## Contact
+## Contact Information
 
 Phone: 🇺🇸(United States) +1 (916) 542-0559
 
