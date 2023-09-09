@@ -9,5 +9,5 @@ Allow: /js/
 Allow: /css/
 Disallow: /fonts/
 Disallow: /fancybox/
-Sitemap: https://billhu.cn/sitemap.xml
+Sitemap: https://www.billhu.us/sitemap.xml
 
