@@ -14,7 +14,7 @@ In Spring 2023, I was admitted as an exchange student by **University of Wiscons
 
 ## About this Blog
 
-This blog is built with `hexo` and theme `fluid`.
+This blog is built with [hexo](https://hexo.io) and theme [fluid](https://github.com/fluid-dev/hexo-theme-fluid).
 
 Primary domain: [www.billhu.us](https://www.billhu.us). 
 
@@ -22,7 +22,7 @@ Also available at [billhu0.github.io](https://billhu0.github.io) and [billhu0.ve
 
 GitHub address for this blog: [GitHub Link](https://github.com/billhu0/billhu-hexo-blog)
 
-## Contact Information
+## Contact Me
 
 Phone: 🇺🇸(United States) +1 (916) 542-0559
 

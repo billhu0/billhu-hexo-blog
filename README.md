@@ -6,11 +6,11 @@
 
 ## What is this repo about?
 
-Welcome to my blog! It is created with [hexo](https://hexo.io) and theme 'fluid'. This repo is the blog base, mainly for my backup use. You may also use it to help you build yours.
+Welcome to my blog! It is created with [hexo](https://hexo.io) and theme [fluid](https://github.com/fluid-dev/hexo-theme-fluid). This repo is the blog base, mainly for my backup use. You may also use it to help you build yours.
 
 ## Bill Hu's Blog
 
-**Domain**: **[https://www.billhu.us](https://www.billhu.us)**
+**Primary Domain**: **[https://www.billhu.us](https://www.billhu.us)**
 
 Also available on: 
 
