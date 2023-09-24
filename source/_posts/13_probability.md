@@ -1,7 +1,7 @@
 ---
-title: "[Lecture Notes] SI140 Probability and statistics"
+title: "[Lecture Notes] ShanghaiTech SI140 Probability and statistics"
 date: 2022-01-21 17:12:41
-description: Probability & statistics (概率论与数理统计) lecture notes, SI140/Math1212
+description: Probability & statistics (概率论与数理统计) lecture notes, ShanghaiTech SI140/Math1212, Fall 2021
 categories:
 - Lecture Notes
 tags:

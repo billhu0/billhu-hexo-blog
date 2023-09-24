@@ -1,7 +1,7 @@
 ---
-title: "[Lecture Notes] EE150 Signals and Systems"
+title: "[Lecture Notes] ShanghaiTech EE150 Signals and Systems"
 date: 2022-03-26 14:12:00
-description: Lecture notes for Signals and Systems, spring 2022
+description: Lecture notes for Signals and Systems, ShanghaiTech EE150, Spring 2022
 math: true
 categories: 
 - Lecture Notes
