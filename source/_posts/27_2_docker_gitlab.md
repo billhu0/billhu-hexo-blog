@@ -1,5 +1,5 @@
 ---
-title: Docker 
+title: Build a Gitlab server using Docker 
 date: 2022-04-19 09:45:18
 description: Build a Gitlab server using Docker
 tags: 
