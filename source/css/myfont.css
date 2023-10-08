@@ -1,0 +1,28 @@
+
+#navbar .navbar-brand strong,
+.index-header,
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6,
+.category-list,
+.list-group {
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#subtitle {
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.list-group,
+.category-list .category-post-list {
+    font-weight: 700;
+}
+
+#navbar span{
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
