@@ -84,7 +84,7 @@ chsh -s /bin/zsh      # 设置为默认shell，重启终端或者重启系统生
 
 ```shell
 sudo apt install git curl unzip -y   # 这个脚本需要先安装git, curl, unzip
-zsh -c "$(curl -fsSL 'https://api.host.mintimate.cn/fileHost/public/download/1P0R')"
+zsh -c "$(curl -fsSL 'https://www.wyh.one/src/AutoInstallZsh.sh')"
 ```
 
 切换主题：
