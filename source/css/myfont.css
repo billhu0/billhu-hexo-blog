@@ -1,4 +1,3 @@
-
 #navbar .navbar-brand strong,
 .index-header,
 .markdown-body h1,
@@ -22,7 +21,11 @@
     font-weight: 700;
 }
 
-#navbar span{
+#navbar span {
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 400;
+}
+
+code {
+    font-family: 'JetBrains Mono', SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace !important;
 }
