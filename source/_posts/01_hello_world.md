@@ -1,6 +1,7 @@
 ---
 title: Hello World
 date: 2021-09-07 19:00:00
+math: true
 ---
 
 
