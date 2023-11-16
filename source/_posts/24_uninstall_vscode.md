@@ -9,6 +9,8 @@ categories:
 - vscode
 ---
 
+## How to uninstall vscode thoroughly on macOS
+
 
 - Delete settings and configurations
 

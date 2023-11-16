@@ -12,7 +12,7 @@ tags:
 
 ## `__VA_ARGS__` usage
 
-`__VA_ARGS__` is a macro, which can take in variable number of arguments and expand to multiple arguments.
+`__VA_ARGS__` is a macro, which can take in any number of arguments and expand to multiple arguments. 
 
 ```C
 int main(){
@@ -50,7 +50,9 @@ int main(){
 }
 ```
 
-## A function with variable number of arguments
+
+
+## A function with any number of arguments
 
 ```C
 #include <stdio.h>
@@ -82,7 +84,8 @@ int main(){
 ```
 
 
-## C++: Compile time Fibonacci 
+
+## C++: Compile time Fibonacci 编译期计算斐波那契数列
 
 ```C++
 #include <iostream>
@@ -108,7 +111,10 @@ int main(){
 }
 ```
 
+
+
 ## C++: Templated Sum function
+
 ```C++
 #include <iostream>
 
@@ -135,7 +141,10 @@ int main(){
 }
 ```
 
-## C++ Printline
+
+
+## C++ Printline (模仿java的println)
+
 ```C++
 #include <iostream>
 /*
@@ -164,7 +173,8 @@ int main(){
 ```
 
 
-## QuickRead 
+
+## QuickRead 快读
 
 ```c++
 template <typename IntType = int>

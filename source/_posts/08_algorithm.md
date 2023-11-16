@@ -1,5 +1,5 @@
 ---
-title: Algorithm templates (C++)
+title: Algorithm templates (C++模板)
 date: 2021-11-11 21:32:00
 description: Some algorithm implementation and c++ code snippets here
 categories: 
@@ -12,7 +12,7 @@ tags:
 
 ## Some sort algorithms
 
-### 1. Mergesort
+### 1. Mergesort 归并排序
 
 ```c++
 // Normal Mergesort (templated)
@@ -74,7 +74,7 @@ mergesort(arr, 15);
 
 
 
-### 2. Quicksort
+### 2. Quicksort 快排
 
 ```c++
 template <class T>
@@ -163,7 +163,7 @@ int main(){
 
 
 
-### 3. Disjoint sets 
+### 3. Disjoint sets 并查集
 
 - Disjoint set with path compression. 
 
@@ -225,7 +225,7 @@ void set_union(int i, int j){
 
 ## Common coding snippets 
 
-### QuickRead 
+### QuickRead 快读
 
 ```c++
 template <typename IntType = int>
@@ -259,7 +259,7 @@ quickRead(b, c, d);  // Same as 'std::cin >> b >> c >> d'
 
 
 
-### `bits/stdc++.h` omnipotent header  
+### `bits/stdc++.h` omnipotent header 万能头
 
 (Note that, personally, I STRONGLY DISLIKE the following two lines of code. The first line will significantly reduce compilation speed, not supported by some compiler, and is not in C++ standard. The second line will lead to potential problems. **Except for ACM and OI.**)
 
@@ -416,10 +416,10 @@ Clang, MSVC may not support `bits/stdc++.h`. If you want to use it, you can find
 
 </details>
 
-## Boom !
+## Boom 炸编译器!
 
 
-### Include something that is endless
+### Include an endless file
 
 ```c++
 #include </dev/random>  // for linux and macOS

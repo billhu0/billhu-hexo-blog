@@ -1,5 +1,5 @@
 ---
-title: Homebrew USTC source
+title: Homebrew 中科大源
 date: 2022-02-08 20:11:00
 description: Install and configure Homebrew with USTC source and turn off homebrew auto-update.
 categories: 
@@ -11,7 +11,9 @@ tags:
 
 ## Install Homebrew or Switch to USTC source
 
-Add the following to your shell's environment path. For instance, if you use bash, add to the `~/.bashrc` file. If you use 'zsh' and 'oh-my-zsh', add to `~/.zshrc` file.
+Add the following to your shell's environment path.
+
+For instance, if you use bash, append to the `~/.bashrc`. If you use zsh, append to `~/.zshrc`.
 
 ```shell
 export HOMEBREW_NO_AUTO_UPDATE=true
