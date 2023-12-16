@@ -27,7 +27,7 @@
     "hexo-renderer-markdown-it-plus": "^1.0.6",
     "hexo-renderer-stylus": "^3.0.0",
     "hexo-server": "^3.0.0",
-    "hexo-theme-fluid": "^1.9.4",
+    "hexo-theme-fluid": "^1.9.6",
     "hexo-theme-landscape": "^1.0.0",
     "hexo-uglify": "^2.0.0"
   }
