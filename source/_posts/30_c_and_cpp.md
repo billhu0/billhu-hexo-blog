@@ -10,29 +10,37 @@ tags:
 - C++
 ---
 
-## `__VA_ARGS__` usage
+## `__VA_ARGS__` & `##__VA_ARGS__`usage
 
-`__VA_ARGS__` is a macro, which can take in any number of arguments and expand to multiple arguments. 
+`__VA_ARGS__` is a special identifier, which can represent a variable number of arguments in a macro.
+
+It is often used with `...` to define macros that can take any number of arguments. 
 
 ```C
-int main(){
+#include <stdio.h>
 
-    /* Without __VA_ARGS__, arguments not correctly expanded */
-    #define aaa() some_function()
-    aaa();       // expanded to some_function()
-    aaa(1, 'a'); // still expanded to some_function() , error
+// Simple macro that takes a variable number of arguments and prints them
+#define PRINT_ARGS(...) \
+    do { \
+        printf("Arguments: "); \
+        printf(__VA_ARGS__); \
+        printf("\n"); \
+    } while (0)
 
-    /* With ... and __VA_ARGS__, arguments expanded */
-    #define bbb(...) some_function(__VA_ARGS__)
-    bbb();         // expanded to  some_function()
-    bbb(123, 'a'); // expanded to  some_function(123, 'a')
+int main() {
+    // Using the macro with different numbers of arguments
+    PRINT_ARGS("One");
+    PRINT_ARGS("Two", "Three");
+    PRINT_ARGS("Four", "Five", "Six");
 
+    return 0;
 }
+
 ```
 
-We can also combine the various arguments with some fixed args. 
+However, if no arguments are passed into a macro that uses `__VA_ARGS__`, it will result in a trailing comma issue (a redundant comma '`,`' at the end).
 
-However, if there're NO arguments, `__VA_ARGS__` will result in a redundant comma (`,`), leading to a syntax error. `##__VA_ARGS__` will remove the previous comma in this cases, and works the same as `__VA_ARGS__` in other cases.
+To avoid this error, use `##__VA_ARGS`, which will remove the previosu comma when no arguments, and works the same as `__VA_ARGS__` normally in other cases. 
 
 ```C
 int main(){
