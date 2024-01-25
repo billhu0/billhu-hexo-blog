@@ -25,7 +25,7 @@
     "hexo-image-link": "^0.0.5",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-markdown-it-plus": "^1.0.6",
-    "hexo-renderer-stylus": "^3.0.0",
+    "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
     "hexo-theme-fluid": "^1.9.7",
     "hexo-theme-landscape": "^1.0.0",
