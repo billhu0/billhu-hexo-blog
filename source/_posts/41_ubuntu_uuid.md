@@ -12,34 +12,23 @@ description:
 
 ## 查看硬盘UUID的几种方法
 
-- 
-  ```shell
-  ls -l /dev/disk/by-uuid
-  ```
+- `ls -l /dev/disk/by-uuid`
 
   ![](41_ubuntu_uuid/ls_dev_disk_by_uuid.png)
 
-- ```shell
-  sudo blkid
-  ```
+- `sudo blkid`
 
   ![](41_ubuntu_uuid/sudo_blkid.png)
 
-- ```shell
-  lsblk -o name,mountpoint,size,uuid
-  ```
+- `lsblk -o name,mountpoint,size,uuid`
 
   ![](41_ubuntu_uuid/lsblk.png)
 
 ## 格式化硬盘为ext4
 
-- ```shell
-  sudo mkfs.ext4 /dev/sda
-  ```
+- `sudo mkfs.ext4 /dev/sda`
 
-- ```shell
-  sudo mkfs -t ext4 /dev/sda
-  ```
+- `sudo mkfs -t ext4 /dev/sda`
 
   
 
