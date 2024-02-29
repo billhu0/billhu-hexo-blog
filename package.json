@@ -9,11 +9,11 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "7.0.0"
+    "version": "7.1.1"
   },
   "dependencies": {
     "css": "^3.0.0",
-    "hexo": "^7.0.0",
+    "hexo": "^7.1.1",
     "hexo-clean-css": "^2.0.0",
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",
