@@ -18,9 +18,9 @@ tags:
 
 ### Step 1: Create an SSH key pair locally
 
-<div class="note note-info">
+{% note info %}
 <p>如果你之前做过这一步（`~/.ssh`目录下已有`id_rsa.pub`文件），可以跳过这一步。</p>
-</div>
+{% endnote %}
 
 在**本地**机器的终端，直接执行这个`ssh-keygen`命令即可（linux/macOS/Windows Terminal都支持这个命令）
 
@@ -48,9 +48,9 @@ ssh-keygen
 
 上面生成的那两个文件中，private key 就保存在本地机器上，public key要添加到remote host，让remote端认识你这个公钥。
 
-<div class="note note-warning">
+{% note warning %}
 <p>Windows用户请不要使用Linux和macOS的操作方法，请往下看</p>
-</div>
+{% endnote %}
 
 - Linux & macOS
 
