@@ -1,6 +1,6 @@
 ---
 title: Configure Oh-my-zsh on Git Bash (Windows)
-date: 2024-03-20 02:26:30
+date: 2024-03-19 02:26:30
 tags:
 ---
 
@@ -40,4 +40,8 @@ if [ -t 1 ]; then
 fi
 ```
 
+For further configuration and beautify, consider {% post_link 20_ubuntu-config %}
 
+{% note info %}
+Reference: [link](https://dominikrys.com/posts/zsh-in-git-bash-on-windows/)
+{% endnote %}
