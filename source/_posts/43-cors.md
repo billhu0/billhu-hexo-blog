@@ -2,11 +2,14 @@
 title: What is Cross-Origin Resource Sharing (CORS) policy?
 date: 2024-03-22 23:32:09
 tags:
+- nodejs
+- JavaScript
+categories: 
+- Code
 ---
 
 {% note info %}
-
-## TL, DR
+# TL, DR
 
 CORS is a security feature by web browsers that **restricts webpages from making requests to resources on a different origin (domain)** than the one the web page was served from, unless permission is explicitly granted. 
 
@@ -19,7 +22,6 @@ res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT, OPTIONS')
 res.setHeader('Access-Control-Allow-Credentials', 'true');
 res.setHeader('Access-Control-Expose-Headers', 'Set-Cookie');
 ```
-
 {% endnote %}
 
 ## 事件起因
@@ -148,6 +150,13 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
+
+@app.route('/api/hello-world')
+def hello_world():
+    return jsonify({'message': 'Hello, World!'})
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', debug=True)
 ```
 
 

@@ -2,6 +2,9 @@
 title: Configure Oh-my-zsh on Git Bash (Windows)
 date: 2024-03-19 02:26:30
 tags:
+- Windows
+categories: 
+- Code
 ---
 
 
