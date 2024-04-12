@@ -28,7 +28,7 @@ Phone: 🇺🇸(United States) +1 (916) 542-0559
 
 Github: [@billhu0](https://github.com/billhu0)
 
-LinkedIn: [Bill Hu](https://www.linkedin.com/in/bill-hu-1a6316263)
+LinkedIn: [Bill Hu](https://www.linkedin.com/in/billhu-shanghaitech)
 
 Twitter: [@billhu0](https://twitter.com/billhu0)
 
