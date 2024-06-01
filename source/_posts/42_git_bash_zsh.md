@@ -10,7 +10,7 @@ categories:
 
 ## Step 1. Download the latest MSYS2 zsh package
 
-... from the [link](https://packages.msys2.org/package/zsh?repo=msys&variant=x86_64).
+... from the [link (https://packages.msys2.org/package/zsh?repo=msys&variant=x86_64)](https://packages.msys2.org/package/zsh?repo=msys&variant=x86_64).
 
 The filename should look similar to `zsh-5.9-2-x86_64.pkg.tar.zst`.
 
