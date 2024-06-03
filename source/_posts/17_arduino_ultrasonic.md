@@ -2,8 +2,7 @@
 title: 用 Arduino uno + HC-SR04 做一个超声波测距仪
 date: 2021-09-07 17:09:49
 categories: 
-- Code
-- Raspi&Arduino
+- Singlechip & RaspberryPi
 tags: 
 - Linux
 - C

@@ -3,8 +3,7 @@ title: Algorithm templates (C++模板)
 date: 2021-11-11 21:32:00
 description: Some algorithm implementation and c++ code snippets here
 categories: 
-- Code
-- C++
+- Algorithm
 tags:
 - C
 - C++

@@ -1,8 +1,8 @@
 ---
 date: 2024-02-29 16:34:56
 title: Ubuntu如何挂载新硬盘
+description: "In Ubuntu, how to mount a new disk on startup?"
 categories: 
-- Code
 - Linux
 tags: 
 - Linux

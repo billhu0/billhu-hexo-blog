@@ -3,8 +3,7 @@ title: C & C++ Code Snippets
 date: 2022-07-11 11:32:00
 description: Some c and c++ code snippets here
 categories: 
-- Code
-- C++
+- Algorithm
 tags:
 - C
 - C++

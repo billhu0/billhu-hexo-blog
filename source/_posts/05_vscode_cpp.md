@@ -3,7 +3,7 @@ title: (macOS)VSCode运行调试C(++)的环境配置
 date: 2021-10-10 19:38:40
 description: macOS 上配置VSCode的coderunner插件，及tasks和launch.json，来自动化编译、运行、调试单文件C/C++程序。
 categories:
-- Code
+- Cross Platform
 - VSCode
 tags:
 - C++

@@ -3,7 +3,7 @@ title: "(Mac/Linux/Win) Write LaTeX with VSCode or Jetbrains IDE"
 date: 2021-09-14 19:38:40
 description: Configure latex environment and using VSCode or JetBrains IDE along with plugins to write latex.
 categories:
-- Code
+- Cross Platform
 - VSCode
 tags:
 - LaTeX

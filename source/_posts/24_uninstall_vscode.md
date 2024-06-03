@@ -3,7 +3,7 @@ title: Uninstall Vscode on macOS
 date: 2021-10-17 19:24:01
 description: Uninstall vscode and remove all vscode plugins and configs
 tags: 
-- vscode
+- macOS
 categories: 
 - Code
 - vscode

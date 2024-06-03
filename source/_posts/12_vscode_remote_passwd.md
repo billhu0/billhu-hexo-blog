@@ -3,8 +3,8 @@ title: vscode Remote-SSH如何保存密码自动登录远程服务器
 date: 2022-01-17 19:38:00
 description: 使用公钥登录服务器，并在vscode的remote ssh插件中保存服务器配置，省去每次连接服务器需要输入密码的麻烦
 categories: 
-- Code
-- VSCode
+- Cross Platform
+- ssh
 tags:
 - VSCode
 - Linux

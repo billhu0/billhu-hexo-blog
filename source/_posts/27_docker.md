@@ -7,8 +7,8 @@ tags:
 - Linux
 - nginx
 categories: 
-- Code
-- Docker
+- Cross Platform
+- docker
 ---
 
 ## Official website and docs
@@ -29,7 +29,7 @@ In short, docker behaves similar to virtual machines, except that it is extremel
   For example, an ubuntu image is a template environment including the ubuntu operating system. If we install Apache software on it, that image can be called an Apache image.
 
 - **Container**: You can run several **containers** (virtual machines) in a computer, each in an isolated environment. A container behaves like a lightweight sandbox. You can regard it as a simple linux system environment (including process space, user space, network space, and the applications running inside it). 
-    
+  
     Container is the instantiate application created by an image. You can create, start, stop, or delete a container, without affecting your host system. You can choose whether to share some network ports, files or so on between your host machine and the containers.
 
     Note that the image itself is readonly. When you start a container using an image, docker creates a writable layer on the top of the image, while the image itself is still readonly.

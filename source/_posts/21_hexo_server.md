@@ -1,7 +1,9 @@
 ---
 title: Deploy hexo to your personal server
 date: 2022-02-19 13:50:00
-categories: hexo
+categories:
+- Cross Platform
+- hexo
 description: Deploy hexo to your personal server, using git and nginx.
 tags:
 - Linux

@@ -1,11 +1,12 @@
 ---
-title: "CS110 24 Spring Longan Nano 配置与使用"
+title: "CS110 Longan Nano 配置与使用"
 date: 2024-05-14 00:42:05
+description: "非官方 CS110 Spring 2024 Longan Nano 指南"
 tags:
 - C
+- Lecture Notes
 categories:
 - Lecture Notes
-hide: true
 ---
 
 # 非官方 CS110 Longan Nano 指南

@@ -5,6 +5,7 @@ description: Deploy free SSL certificates issued by 'Let's Encrypt' for all of y
 tags: 
 - nginx 
 categories: 
+- Cross Platform
 - nginx
 ---
 

@@ -3,8 +3,7 @@ title: C++的奇技淫巧
 date: 2023-09-01 21:35:00
 description: Master C++
 categories:
-- Code
-- C++
+- Algorithm
 tags:
 - C++
 hide: true

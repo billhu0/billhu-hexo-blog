@@ -1,11 +1,12 @@
 ---
 title: What is Cross-Origin Resource Sharing (CORS) policy?
 date: 2024-03-22 23:32:09
+description: "CORS prevents webpages from making requests to a different origin."
 tags:
 - nodejs
 - JavaScript
 categories: 
-- Code
+- Frontend
 ---
 
 {% note info %}

@@ -7,8 +7,8 @@ tags:
 - Linux
 - nginx
 categories: 
-- Code
-- Docker
+- Cross Platform
+- docker
 ---
 
 ## Docker official website and docs

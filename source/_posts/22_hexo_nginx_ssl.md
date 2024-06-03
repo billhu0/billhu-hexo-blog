@@ -3,7 +3,7 @@ title: Install SSL certificate on Nginx
 date: 2022-02-21 23:27:12
 description: Install SSL certificate on Nginx to enable https for your website. 
 tags: 
-- hexo
+- Cross Platform
 - nginx 
 categories: 
 - nginx

@@ -1,15 +1,18 @@
 ---
-title: 无限白嫖FCPX
+title: Free Official FCPX
 date: 2024-04-30 15:42:05
+description: "rm -f ~/Library/Application\ Support/.ffuserdata"
 tags:
+- macOS
 categories:
+- macOS
 ---
 
-官网下载[Final Cut Pro Trial](https://www.apple.com/final-cut-pro/trial/).
+Download [Final Cut Pro Trial](https://www.apple.com/final-cut-pro/trial/).
 
 ![](44_fcpx_crack/1.jpg)
 
-执行以下代码即可回到剩余90天试用
+Execute the following and the trial period will be reset (reset to 90 days remaining)
 
 ```shell
 rm -f ~/Library/Application\ Support/.ffuserdata

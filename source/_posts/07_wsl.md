@@ -3,7 +3,7 @@ title: "How to install WSL?"
 date: 2021-10-21 23:11:00
 description: "How did I install WSL, and what errors did I encountered?"
 catagories:
-- windows
+- Windows
 tags:
 - windows
 - Linux

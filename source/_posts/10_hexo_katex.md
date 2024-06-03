@@ -4,6 +4,7 @@ date: 2022-01-16 18:38:00
 description: Inserting LaTeX formulas in your hexo blog and render it correctly, using KaTeX renderer.
 math: true
 categories: 
+- Cross Platform
 - hexo
 tags:
 - hexo

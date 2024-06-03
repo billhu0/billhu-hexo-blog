@@ -2,7 +2,6 @@
 title: Ubuntu Configs
 date: 2022-02-14 20:17:07
 categories: 
-- Code
 - Linux
 sticky: 100
 description: For Ubuntu Desktop or Ubuntu Server with x86_64 arch。
@@ -185,5 +184,4 @@ Jre (Java runtime environment)，用于运行logisim软件：
 ```
 sudo apt install openjdk-11-jdk -y
 ```
-
 

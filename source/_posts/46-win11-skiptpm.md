@@ -1,7 +1,11 @@
 ---
 title: Skip TPM check when installing Windows 11
 date: 2024-06-02 01:16:32
+description: "Easiest way: Use Rufus."
 tags:
+- Windows
+categories:
+- Windows
 ---
 
 {% note primary %}

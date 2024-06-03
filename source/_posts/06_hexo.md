@@ -3,6 +3,7 @@ title: Build your blog with hexo and deploy to GitHub
 date: 2021-10-11 21:32:00
 description: Build your blog with hexo and deploy it to GitHub Pages, which is completely free and easy to use. (This is my first tutorial post written in English.)
 categories: 
+- Cross Platform
 - hexo
 tags:
 - macOS

@@ -2,8 +2,7 @@
 title: Raspi config
 date: 2021-09-12 23:16:05
 categories: 
-- Code
-- Raspi&Arduino
+- Singlechip & RaspberryPi
 tags: 
 - Linux
 - RaspberryPi
@@ -132,16 +131,6 @@ sudo pip install s-tui
 
 sudo s-tui
 ```
-
-
-
-### github太慢：
-
-{% note danger %}
-此方法已经失效！The following solution may have been outdated!
-{% endnote %}
-
-使用github的镜像网站进行访问，[github.com.cnpmjs.org](https://link.zhihu.com/?target=http%3A//github.com.cnpmjs.org)，我们将原本的网站中的github.com 进行替换。比如`git clone github.com/xxx/xxx.git`，将其替换为`git clone github.com.cnpmjs.org/xxx/xxx.git`
 
 
 

@@ -3,8 +3,8 @@ title: Git
 date: 2022-03-14 19:24:01
 description: Some commonly used git commands and concepts, for beginners.
 tags: 
+- Cross Platform
 - git
-- linux 
 categories: 
 - Code
 - git

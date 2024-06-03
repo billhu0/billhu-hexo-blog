@@ -2,7 +2,6 @@
 date: 2022-02-13 16:34:56
 title: How to configure swap on Ubuntu
 categories: 
-- Code
 - Linux
 tags: 
 - Linux
