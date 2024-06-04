@@ -9,13 +9,11 @@ categories:
 ---
 
 {% note primary %}
-
 ## Step 0: Download Windows ISO
 
 You may download Windows 11 ISO from microsoft official website: [https://www.microsoft.com/zh-cn/software-download/windows11](https://www.microsoft.com/zh-cn/software-download/windows11).
 
 If you do not want the newest version (for example, Windows11 21H2, 22H2), you may use [MediaCreationTool.bat (Github link)](https://github.com/AveYo/MediaCreationTool.bat), where you can select 'Auto ISO' and choose a history version of Windows. See the README.md in the Github link for details.
-
 {% endnote %}
 
 ---
@@ -33,17 +31,13 @@ You may encounter 'This PC can't run Windows 11' when upgrading to or installing
 ---
 
 {% note success %}
-
-Personal thoughts: Using Rufus ([Solution 4](#Solution 4: Use Rufus)) seems to be the most convenient way.
-
+TL,DR: Using Rufus ([Solution 4](#solution-4-use-rufus)) seems to be the most convenient way.
 {% endnote %}
 
 ## Solution 1: registry
 
 {% note info %}
-
 If you are booting from Windows 11 install disk, use Shift+F10 to open cmd. Otherwise just open cmd (run as administrater).
-
 {% endnote %}
 
 Use cmd to execute the following: 
