@@ -128,6 +128,10 @@ BOOT0按键和RESET按键的位置请查看下图
 
     如果出现错误，尝试在命令前添加 `sudo` 并重试。
 
+    如果仍然不行，可以使用 `-S` 指定serial number。
+
+    **如果找不到设备**，看上面。
+
   - 出现 `Invalid DFU suffix signature` and `dfu-util: Error during download get_status` 错误可忽略。
 
 - Mac:
@@ -176,7 +180,9 @@ BOOT0按键和RESET按键的位置请查看下图
 
 ![](45_cs11024s_longan/vscode-21.jpg)
 
-解压下载的 lab12-starter, 打开该目录并打开里面的 `platformio.ini` 文件，点击 build
+解压下载的 lab12-starter, 打开该目录并打开里面的 `platformio.ini` 文件，点击 build。
+
+**如果没有build选项，请卸载coderunner插件。**
 
 ![](45_cs11024s_longan/vscode-build.webp)
 
@@ -205,7 +211,7 @@ drwxrwxr-x   4 username username 4096  Mar 29 09:34 platforms
 
 ![](45_cs11024s_longan/firmware-location.webp)
 
-Troubleshooting:
+故障排查:
 
 - Fail to initialize PlatformIO: 彻底退出vscode并重试
 - Cannot find Python Interpreter when initializing PlatformIO: 参考[此处](https://github.com/platformio/platformio-core-installer/issues/1774)的方法
