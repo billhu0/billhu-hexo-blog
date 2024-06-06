@@ -7,7 +7,6 @@ categories:
 tags: 
 - Linux
 - Ubuntu 
-description: 
 ---
 
 ## 查看硬盘UUID的几种方法
