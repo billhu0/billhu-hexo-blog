@@ -9,7 +9,7 @@ categories:
 ---
 
 {% note primary %}
-## Step 0: Download Windows ISO
+Download Windows ISO
 
 You may download Windows 11 ISO from microsoft official website: [https://www.microsoft.com/zh-cn/software-download/windows11](https://www.microsoft.com/zh-cn/software-download/windows11).
 
@@ -22,16 +22,24 @@ If you do not want the newest version (for example, Windows11 21H2, 22H2), you m
 
 You may encounter 'This PC can't run Windows 11' when upgrading to or installing Windows 11, like follows:
 
-![](46-win11-skiptpm/installer-2.webp)
+![](46_win11_skip_tpm/installer-2.webp)
 
-![](46-win11-skiptpm/installer-1.jpg)
+![](46_win11_skip_tpm/installer-1.jpg)
 
 
 
 ---
 
 {% note success %}
+**TL, DR: Use Rufus!**
+
+**TL, DR: Use Rufus!**
+
+**TL, DR: Use Rufus!**
+
 TL,DR: Using Rufus ([Solution 4](#solution-4-use-rufus)) seems to be the most convenient way.
+
+However, if you prefer not to use any third-party software, there are also some alternative ways to do this. See below.
 {% endnote %}
 
 ## Solution 1: registry
@@ -63,7 +71,7 @@ Then navigate to `HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup`, create a DWORD item 
 
 Save and exit. Like the following
 
-![](46-win11-skiptpm/registry-keys.webp)
+![](46_win11_skip_tpm/registry-keys.webp)
 
 
 
@@ -105,6 +113,6 @@ In this way you are installing Windows 11 image with Windows 10 installer, so do
 
 Download [Rufus](https://rufus.ie/), plug in an external U-disk and create a USB startup disk using Rufus. 
 
-![](46-win11-skiptpm/rufus-1.png)
+![](46_win11_skip_tpm/rufus-1.png)
 
 After that, directly run the setup.exe from your external U-disk.

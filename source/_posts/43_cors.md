@@ -48,7 +48,7 @@ app.listen(port, () => {
 
 When accessing the URL  `http://{server_ip}:53706/api/hello-world` directly from Chrome, the message displayed correctly.
 
-![](43-cors/chrome.png)
+![](43_cors/chrome.png)
 
 However, when opening chrome DevTools, and type the following code, there is an error:
 
@@ -62,7 +62,7 @@ fetch("http://{server_ip}:53706/api/hello-world")
 
 The console error is as follows:
 
-![](43-cors/devtools-error.png)
+![](43_cors/devtools-error.png)
 
 Then I created a blank react project, and in `App.jsx`, I used the same fetch code above, the same problem still exists.
 
@@ -81,7 +81,7 @@ app.use((req, res, next) => {
 
 With this addition, all functionalities, including direct URL access, fetch in the React project, and direct fetch in the DevTools console, function as expected.
 
-![](43-cors/devtools-ok.png)
+![](43_cors/devtools-ok.png)
 
 ## Reason
 
