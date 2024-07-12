@@ -5,6 +5,8 @@ tags:
 - Algorithm
 categories:
 - Algorithm
+math: true
+description: "Leetcode 28 题解: 找出字符串中第一个匹配项的下标"
 ---
 
 # Leetcode 28 题目描述
@@ -17,7 +19,7 @@ categories:
 >
 > **示例 1：**
 >
-> ```
+> ```txt
 > 输入：haystack = "sadbutsad", needle = "sad"
 > 输出：0
 > 解释："sad" 在下标 0 和 6 处匹配。
@@ -26,7 +28,7 @@ categories:
 >
 > **示例 2：**
 >
-> ```
+> ```txt
 > 输入：haystack = "leetcode", needle = "leeto"
 > 输出：-1
 > 解释："leeto" 没有在 "leetcode" 中出现，所以返回 -1 。
@@ -34,9 +36,7 @@ categories:
 
 
 
-# 朴素解法就一行
-
-但是复杂度为 $O(m * n)$
+# 朴素解法就一行 复杂度$O(m * n)$
 
 ```c++
 using std::string;
@@ -85,7 +85,7 @@ int main() {
 
 使用KMP算法能把复杂度降至 $O(m+n)$。
 
-# KMP算法
+# KMP算法 复杂度 $O(m+n)$
 
 KMP是Knuth-Morris-Pratt，三个人名。
 
@@ -95,7 +95,7 @@ KMP是Knuth-Morris-Pratt，三个人名。
 
 先考虑一下朴素算法会怎么做：
 
-```
+```txt
           |
 haystack: a b e a b a b e a b f
 needle:   a b e a b f
@@ -106,7 +106,7 @@ needle:   a b e a b f
 
 起始字符 `"a"` 之后的字符 `"b" "e" "a" "b"` 都是匹配的，两个指针会同时向右移动。
 
-```
+```txt
           | | | | | ?
 haystack: a b e a b a b e a b f
 needle:   a b e a b f
@@ -115,7 +115,7 @@ needle:   a b e a b f
 
 下一个字符应该是 `"f"`，但原串中下一个字符是 `"a"`，对不上了！此时原串中的指针会移动至起始点的下一个位置，即第二个字符 `"b"` 处，而匹配串中的指针会移动至起始点，如下图所示：
 
-```
+```txt
             | ?
 haystack: a b e a b a b e a b f
 needle:   a b e a b f
@@ -130,7 +130,7 @@ needle:   a b e a b f
 
 但是我们没必要前功尽弃。注意到 `"abeab"` 中有一个相同的“前缀”和“后缀” `"ab"`，我们可以将原串中的指针移动到第二个 `"ab"` 处。
 
-```
+```txt
                 | | ?
 haystack: a b e a b a b e a b f
 needle:   a b e a b f
