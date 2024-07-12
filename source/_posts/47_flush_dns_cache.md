@@ -2,6 +2,11 @@
 title: "[macOS/Linux/Windows] How to flush DNS cache"
 date: 2024-06-19 07:02:18
 tags:
+- DNS
+categories:
+- Cross Platform
+- NAT
+description: "sudo resolvectl flush-caches"
 ---
 
 # [macOS/Linux/Windows] How to flush DNS cache
