@@ -9,9 +9,9 @@ tags:
 - C++
 ---
 
-## Some sort algorithms
+# 手写常见排序算法
 
-### 1. Mergesort 归并排序
+## 1. Mergesort 归并排序
 
 ```c++
 // Normal Mergesort (templated)
@@ -73,7 +73,7 @@ mergesort(arr, 15);
 
 
 
-### 2. Quicksort 快排
+## 2. Quicksort 快排
 
 ```c++
 template <class T>
@@ -108,9 +108,11 @@ quicksort(arr, 15);
 
 
 
-## Some data structures
 
-### 1. Simple `std::vector` with only `pushback` and `clear`
+
+# Some data structures
+
+## 1. Simple `std::vector` with only `pushback` and `clear`
 
 ```c++
 #define MAX_NUM 1000
@@ -127,7 +129,7 @@ public:
 
 
 
-### 2. Simple `std::queue`
+## 2. Simple `std::queue`
 
 ```c++
 #define MAX_NUM 1000
@@ -162,7 +164,7 @@ int main(){
 
 
 
-### 3. Disjoint sets 并查集
+## 3. Disjoint sets 并查集
 
 - Disjoint set with path compression. 
 
@@ -222,9 +224,11 @@ void set_union(int i, int j){
 
 
 
-## Common coding snippets 
+# Common coding snippets 
 
-### QuickRead 快读
+## QuickRead 快读
+
+### C++快读，能读任意IntType (包括int, uint, long, int16_t, int8_t等)
 
 ```c++
 template <typename IntType = int>
@@ -256,11 +260,13 @@ quickRead(a);        // Same as 'std::cin >> a'
 quickRead(b, c, d);  // Same as 'std::cin >> b >> c >> d'
 ```
 
+## 
 
 
-### `bits/stdc++.h` omnipotent header 万能头
 
-(Note that, personally, I STRONGLY DISLIKE the following two lines of code. The first line will significantly reduce compilation speed, not supported by some compiler, and is not in C++ standard. The second line will lead to potential problems. **Except for ACM and OI.**)
+## `bits/stdc++.h` omnipotent header 万能头
+
+(Note that, 个人非常不喜欢这个万能头，因为它并不是C++标准，clang和msvc不支持，且会拖慢编译速度。**信竞除外**。)
 
 ```c++
 #include <bits/stdc++.h>
@@ -269,7 +275,8 @@ using namespace std;
 
 Clang, MSVC may not support `bits/stdc++.h`. If you want to use it, you can find the include path of the compiler first, add a new folder `bits`, and create a file `stdc++.h` with the following:
 
-<details>
+{% fold info @bits/stdc++.h %}
+
 
 ```c++
 // C++ includes used for precompiling -*- C++ -*-
@@ -413,7 +420,43 @@ Clang, MSVC may not support `bits/stdc++.h`. If you want to use it, you can find
 
 ```
 
-</details>
+{% endfold %}
+
+
+
+
+
+## C++: Compile time Fibonacci 编译期计算斐波那契数列
+
+```C++
+#include <iostream>
+
+/*
+ * region Compile time Fibonacci
+ */
+template<long a>
+struct fib {
+    static constexpr const long value = fib<a - 1>::value + fib<a - 2>::value;
+};
+template<>
+struct fib<1> {
+    static constexpr const long value = 1;
+};
+template<>
+struct fib<2> {
+    static constexpr const long value = 1;
+};
+
+int main(){
+    std::cout << fib<10>::value << std::endl;  // output 55
+}
+```
+
+
+
+
+
+
 
 ## Boom 炸编译器!
 

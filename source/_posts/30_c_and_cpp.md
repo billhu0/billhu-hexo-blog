@@ -1,7 +1,7 @@
 ---
-title: C & C++ Code Snippets
+title: "C/C++ 可变数量参数的函数"
 date: 2022-07-11 11:32:00
-description: Some c and c++ code snippets here
+description: "\"__VA_ARGS__\", \"##__VA_ARGS__\""
 categories: 
 - Algorithm
 tags:
@@ -9,63 +9,15 @@ tags:
 - C++
 ---
 
-## `__VA_ARGS__` & `##__VA_ARGS__`usage
-
-`__VA_ARGS__` is a special identifier, which can represent a variable number of arguments in a macro.
-
-It is often used with `...` to define macros that can take any number of arguments. 
-
-```C
-#include <stdio.h>
-
-// Simple macro that takes a variable number of arguments and prints them
-#define PRINT_ARGS(...) \
-    do { \
-        printf("Arguments: "); \
-        printf(__VA_ARGS__); \
-        printf("\n"); \
-    } while (0)
-
-int main() {
-    // Using the macro with different numbers of arguments
-    PRINT_ARGS("One");
-    PRINT_ARGS("Two", "Three");
-    PRINT_ARGS("Four", "Five", "Six");
-
-    return 0;
-}
-
-```
-
-However, if no arguments are passed into a macro that uses `__VA_ARGS__`, it will result in a trailing comma issue (a redundant comma '`,`' at the end).
-
-To avoid this error, use `##__VA_ARGS`, which will remove the previosu comma when no arguments, and works the same as `__VA_ARGS__` normally in other cases. 
-
-```C
-int main(){
-    /* With __VA_ARGS__ */
-    #define ccc(...) some_function("Fixed", __VA_ARGS__)
-
-    ccc();         // expanded to some_function("Fixed", )  ==> syntax error
-    ccc(123, 'a'); // expanded to some_function("Fixed", 123, 'a') ==> fine!
-    
-    /* With ##__VA_ARGS__ */
-    #define ddd(...) some_function("Fixed", ##__VA_ARGS__)
-
-    ddd();         // expanded to some_function("Fixed" )  ==> fine!
-    ddd(123, 'a'); // expanded to some_function("Fixed", 123, 'a') ==> fine!
-}
-```
 
 
-
-## A function with any number of arguments
+# A function with any number of arguments
 
 ```C
 #include <stdio.h>
 #include <stdarg.h>
  
-double average(int num,...){
+double average(int num, ...){
     va_list valist;
     double sum = 0.0;
     int i;
@@ -85,42 +37,63 @@ double average(int num,...){
 }
  
 int main(){
-   printf("Average of 2, 3, 4, 5 = %f\n", average(4, 2,3,4,5));
-   printf("Average of 5, 10, 15 = %f\n", average(3, 5,10,15));
+    printf("Average of 2, 3, 4, 5 = %f\n", average(4, 2,3,4,5));
+    printf("Average of 5, 10, 15 = %f\n", average(3, 5,10,15));
 }
 ```
 
+实际上 `printf` 函数就是这么写出来的，这个函数就是一个能接收任意数量参数的函数。
 
 
-## C++: Compile time Fibonacci 编译期计算斐波那契数列
 
-```C++
-#include <iostream>
+# `__VA_ARGS__` & `##__VA_ARGS__`
 
-/*
- * region Compile time Fibonacci
- */
-template<long a>
-struct fib {
-    static constexpr const long value = fib<a - 1>::value + fib<a - 2>::value;
-};
-template<>
-struct fib<1> {
-    static constexpr const long value = 1;
-};
-template<>
-struct fib<2> {
-    static constexpr const long value = 1;
-};
+`__VA_ARGS__` 允许宏**接收可变数量的参数**。
 
-int main(){
-    std::cout << fib<10>::value << std::endl;  // output 55
+`__VA_ARGS__` allows a macro to accept a variable number of arguments.
+
+It is often used with `...` to define macros that can take any number of arguments. 
+
+```C
+#include <stdio.h>
+
+#define PRINT_ARGS(...) printf(__VA_ARGS__)
+
+int main() {
+    PRINT_ARGS("Hello, %s!\n", "world");  // output: Hello, world!
+    return 0;
 }
 ```
+
+In the above example, the code `PRINT_ARGS("Hello, %s!\n", "world")` will be expanded with `printf("Hello, %s!\n", "world")`。
+
+However, if no arguments are passed into a macro that uses `__VA_ARGS__`, it will result in a trailing comma issue (a redundant comma '`,`' at the end).
+
+To avoid this error, use `##__VA_ARGS`, which will remove the previosu comma when no arguments, and works the same as `__VA_ARGS__` normally in other cases. 
+
+`##__VA_ARGS__` 用于在没有参数时**删除前面的逗号或其他分隔符**。
+
+```C
+#include <stdio.h>
+
+#define LOG(format, ...) printf(format, __VA_ARGS__)
+
+int main() {
+    LOG("Hello, world!\n");
+    LOG("Hello, %s!\n", "world");
+    return 0;
+}
+```
+
+In the above example, `LOG("Hello, world!\n")` will be expanded to `printf("Hello, world\n", )`. Note that there's an extra comma `,`, so a compile error will occur. 
+
+To fix it, just replace `__VA_ARGS__` with `##__VA_ARGS__`.
 
 
 
 ## C++: Templated Sum function
+
+用C++中的模板 template 能更方便实现类似的效果
 
 ```C++
 #include <iostream>
@@ -176,33 +149,6 @@ int main(){
         1, 2, str, a,
         1, 2, str, a
     */
-}
-```
-
-
-
-## QuickRead 快读
-
-```c++
-template <typename IntType = int>
-inline void quickRead(IntType& number) {
-    int f = 0, c;
-    number = 0;
-    do {
-      	c = getchar();
-        f |= (c == '-');
-    } while (!isdigit(c));
-    do {
-        number = number * 10 + c - 48;
-        c = getchar();
-    } while (isdigit(c));
-    if (f) number = -number;
-}
-
-template <typename IntType = int, typename... Args>
-inline void quickRead(IntType &x, Args &... args){
-    quickRead(x);
-    quickRead(args...);
 }
 ```
 

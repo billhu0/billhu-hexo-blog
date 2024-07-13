@@ -36,7 +36,7 @@ description: "Leetcode 28 题解: 找出字符串中第一个匹配项的下标"
 
 
 
-# 朴素解法就一行 复杂度$O(m * n)$
+# 朴素解法一行 复杂度$O(m * n)$
 
 ```c++
 using std::string;
@@ -89,6 +89,8 @@ int main() {
 
 KMP是Knuth-Morris-Pratt，三个人名。
 
+为了解释为什么KMP算法更快，我们需要先考虑一下朴素算法会怎么做。
+
 举一个例子：haystack(原串，原字符串，主串)为 `abeababeabf`, needle(匹配串，模式串)为 `abeabf`。
 
 ## 朴素算法的问题
@@ -102,7 +104,7 @@ needle:   a b e a b f
           |
 ```
 
-原串和匹配串各有一个指针，最初两个指针都指向各自的起始字符 `"a"`。
+原串和匹配串各有一个指针（代码块中竖线 `"|"` 代表指针），最初两个指针都指向各自的起始字符 `"a"`。
 
 起始字符 `"a"` 之后的字符 `"b" "e" "a" "b"` 都是匹配的，两个指针会同时向右移动。
 
@@ -124,7 +126,7 @@ needle:   a b e a b f
 
 ## KMP匹配过程
 
-- 发现效率问题了吗？
+发现效率问题了吗？
 
 我们要找`"abeabf"`，现在已经找到`"abeab"` 了，因为最后一个字符匹配不对而前功尽弃。
 
@@ -137,13 +139,11 @@ needle:   a b e a b f
           | | ?
 ```
 
-这样的话，我们不需要推倒重来从`"a"`重新找，而是可以从 `"ab"` 继续找。更具一般性地说：我们不需要回到匹配串的起始位置，而是根据相同的“前缀”和“后缀”，移动到这个“前缀”下一个出现的位置继续匹配。
+这样的话，我们不需要推倒重来从`"a"`重新找，而是可以从 `"ab"` 继续找。更具一般性地说：我们不需要回到匹配串的起始位置，而是根据相同的“前缀”和“后缀”，移动到这个**“前缀”下一个出现的位置继续匹配**。
 
 这就是KMP算法的匹配过程。
 
-## 最长相同前后缀 next数组
-
-- 如何找相同的前缀和后缀？（next数组）
+## 最长相同前后缀 （next数组）
 
 现在我们就明白了为什么KMP算法比朴素解法更快。
 
@@ -151,13 +151,15 @@ KMP能够利用已经匹配的原串部分相同的“前缀”和“后缀”�
 
 但是有一个问题，我们如何找出上面这个“前缀第二次出现的位置”，或者说，如何找出当前已匹配字符串部分的最长前缀和后缀？
 
-KMP算法引入了一个`next[]` 数组。`next[i]` 表示匹配串中前`i`个字符组成的子串最长的相同前缀后缀的长度。
+KMP算法引入了一个`next[]` 数组。`next[i]` **表示匹配串中前**`i**`个字符组成的子串最长的相同前缀后缀的长度**。
 
 {% note warning %}
 
-定义前缀、后缀不能是整个字符串。
+定义：前缀、后缀不能是整个字符串。
 
 例如 `"abcd"` 前缀包含 "a", "ab", "abc"，而不包括 "abcd"。
+
+例如 `"abcd"` 后缀包含 "d", "cd", "bcd"，而不包括 "abcd"。
 
 再例如 `"a"` 没有前缀。空字符串 `""` 也没有前缀。
 
@@ -307,6 +309,6 @@ int main() {
 
 参考题解：
 
-- FSWLY: [Link](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/solutions/2600821/kan-bu-dong-ni-da-wo-kmp-suan-fa-chao-qi-z1y0/)
+- FSWLY 看不懂你打我，kmp 算法，超清晰多图，逐步图解！: [Link](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/solutions/2600821/kan-bu-dong-ni-da-wo-kmp-suan-fa-chao-qi-z1y0/)
 - 力扣官方题解：[Link](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/solutions/732236/shi-xian-strstr-by-leetcode-solution-ds6y/)
-- aokiumi: [Link](https://aokiumi.github.io/2018/08/20/KMP学习笔记/)
+- Aoki_Umi KMP学习笔记: [Link](https://aokiumi.github.io/2018/08/20/KMP学习笔记/)
