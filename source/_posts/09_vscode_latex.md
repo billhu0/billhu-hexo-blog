@@ -257,7 +257,7 @@ Modify corresponding configuration in VSCode `settings.json`, add  `--shell-esca
 
 Then remove `.aux` files from auto-clean file types. (`.aux` file records all the reference numbers, without which references `\ref` may be compiled to `??`)
 
-![](09_vscode_latex/aux.png)
+![](09_vscode_latex/aux1.png)
 
 
 
