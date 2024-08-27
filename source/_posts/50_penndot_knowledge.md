@@ -12,9 +12,9 @@ description: "Pennsylvania"
 
 TL, DR: 刷官网的一本PDF就够了，链接：[link](https://www.dot.state.pa.us/Public/DVSPubsForms/BDL/BDL%20Manuals/Manuals/PA%20Drivers%20Manual%20By%20Chapter/English/PUB%2095.pdf)。里面大概不到200道题，刷完就够。
 
-考试考的都是原题，并没有很多数值需要记忆。本人还刷了[driver.education](https://driver.education)上的所有题目，其中包含很多不太好记的数值，这些数值大多也出现在了PA Driver's Manual中，但似乎考试都不会出现。所以以下内容用处不大，仅用作个人记录。
+考试考的都是原题，并没有很多数值需要记忆。本人还刷了[driver.education](https://driver.education)上的所有题目，其中包含很多不太好记的数值，这些数值大多也出现在了PA Driver's Manual中，但似乎考试都不会出现。
 
-Repeat: 刷官网的一本PDF就够了，链接：[link](https://www.dot.state.pa.us/Public/DVSPubsForms/BDL/BDL%20Manuals/Manuals/PA%20Drivers%20Manual%20By%20Chapter/English/PUB%2095.pdf)。里面大概不到200道题，刷完就够。
+所以以下内容用处不大，仅用作个人记录。
 {% endnote %}
 
 ## 秒类
