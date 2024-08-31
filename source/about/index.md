@@ -6,11 +6,9 @@ layout: about
 
 ## About Me
 
-🇨🇳ShanghaiTech 20-24 · 🇺🇸UW-Madison Sp23
+🇺🇸Carnegie Mellon 24-25 · 🇨🇳ShanghaiTech 20-24 · 🇺🇸UW-Madison Sp23
 
-I'm currently a senior undergraduate of **ShanghaiTech University**, School of Information Science and Technology (SIST), majoring in Computer Science. 
-
-In Spring 2023, I was admitted as an exchange student by **University of Wisconsin-Madison** Visiting International Students Program.
+I'm currently a first year graduate of **Carnegie Mellon University (CMU)**, MSIN (Master of Science in Information Networking) program. Previously, I received by B.E. degree in Computer Science and Technology from **ShanghaiTech University**. In Spring 2023, I was admitted as an exchange student by **University of Wisconsin-Madison** Visiting International Students Program. 
 
 ## About this Blog
 
@@ -24,11 +22,11 @@ GitHub address for this blog: [GitHub Link](https://github.com/billhu0/billhu-he
 
 ## Contact Me
 
-Phone: 🇺🇸(United States) +1 (916) 542-0559
+Phone: 🇺🇸(United States) +1 (786) 548-1404
 
 Github: [@billhu0](https://github.com/billhu0)
 
-LinkedIn: [Bill Hu](https://www.linkedin.com/in/billhu-shanghaitech)
+LinkedIn: [Bill Hu](https://www.linkedin.com/in/billhu-cmu)
 
 Twitter: [@billhu0](https://twitter.com/billhu0)
 
