@@ -352,7 +352,7 @@ navbar:
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     # - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
-    - { key: "portfolio", link: "https://about.billhu.us", icon: "iconfont icon-code", name: "Portfolio" }
+    - { key: "portfolio", link: "https://www.billhu.xyz", icon: "iconfont icon-code", name: "Portfolio" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -961,7 +961,8 @@ about:
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com/billhu0", tip: "GitHub" }
-    - { class: "iconfont icon-bilibili", link: "https://b23.tv/gmQ2fn", tip: "BiliBili"}
+    - { class: "iconfont icon-linkedin-fill", link: "https://www.linkedin.com/in/billhu-cmu", tip: "Linkedin" }
+    # - { class: "iconfont icon-bilibili", link: "https://b23.tv/gmQ2fn", tip: "BiliBili"}
 
 #---------------------------
 # 自定义页
