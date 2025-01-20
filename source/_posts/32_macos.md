@@ -293,9 +293,9 @@ brew update
 
   开源软件，官网: [mos.caldis.me](https://mos.caldis.me)
 
-  After granting accessibility permissions, turn on "Launch at Login" and "Hide Status Bar Icon"
+  Turn on "Launch on Login".
 
-  有些软件用起来会很怪，比如Adobe Acrobat等，可以添加exception, 对这些软件单独关闭 Smooth Scrolling.
+  有些软件滑动起来会很怪，比如Adobe Acrobat、Blender等，可以添加exception, 对这些软件单独关闭 Smooth Scrolling.
 
   
 
