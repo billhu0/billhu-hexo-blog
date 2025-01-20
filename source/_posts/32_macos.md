@@ -295,7 +295,7 @@ brew update
 
   Turn on "Launch on Login".
 
-  有些软件滑动起来会很怪，比如Adobe Acrobat、Blender等，可以添加exception, 对这些软件单独关闭 Smooth Scrolling.
+  有些软件滑动起来会很怪（甚至完全没法用），如Adobe Acrobat、Blender等，可以添加exception, 对这些软件单独关闭 Smooth Scrolling.
 
   
 
