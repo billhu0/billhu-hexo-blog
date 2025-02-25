@@ -23,8 +23,8 @@ tags:
 
 如果是有图形界面的ubuntu，可以直接进入设置换源，如图：
 
-![](20_ubuntu-config/ubuntu_apt_gui.jpg)
-![](20_ubuntu-config/ubuntu_apt_gui2.png)
+![](20_ubuntu-config/ubuntu_apt_gui.webp)
+![](20_ubuntu-config/ubuntu_apt_gui2.webp)
 
 
 或者手动修改 `/etc/apt/sources.list` 换源。以中科大源为例：

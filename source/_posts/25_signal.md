@@ -310,7 +310,7 @@ For fourier analysis, we consider:
 
 {% note info %}
 **方波的Fourier Series**
-![](25_signal/SquareWavePeriodic.png)
+![](25_signal/SquareWavePeriodic.webp)
 $$
     a_0 = \frac{2T_1}{T}, a_k = \frac{sin(k\omega_0 T_1)}{k\pi}
 $$
@@ -470,7 +470,7 @@ $$
 
 {% note info %}
 **方波的Fourier Transform**
-![](25_signal/SquareWaveSi.png)
+![](25_signal/SquareWaveSi.webp)
 定义$sinc(x) = \frac{sin(\pi x)}{\pi x}$
 
 $$
@@ -551,7 +551,7 @@ $$
 
 ## 4.6 CTFT pairs
 
-![](25_signal/CTFT_pairs.jpg)
+![](25_signal/CTFT_pairs.webp)
 
 {% endnote %}
 
@@ -643,7 +643,7 @@ $$
 
 ## 5.7 Duality 对偶性
 
-![](25_signal/duality.jpg)
+![](25_signal/duality.webp)
 
 
 
@@ -651,7 +651,7 @@ $$
 
 ## 5.6 DTFT pairs
 
-![](25_signal/DTFT_pairs.jpg)
+![](25_signal/DTFT_pairs.webp)
 
 {% endnote %}
 
@@ -683,7 +683,7 @@ X_p(j\omega) = \frac{1}{2\pi} \left[ X(j\omega) * P(j\omega) \right]
 = \frac{1}{T} \sum_{k=-\infty}^{\infty} X(j(\omega - k\omega_s))
 $$
 
-![](25_signal/impulse-train-sampling.jpg)
+![](25_signal/impulse-train-sampling.webp)
 
 
 
@@ -696,7 +696,7 @@ $$
 
 ### 7.1.2 Zero-order Hold Sampling 零阶保持采样
 
-![](25_signal/zeroOrderHoldSampling.jpeg)
+![](25_signal/zeroOrderHoldSampling.webp)
 
 ## 7.2 Signal reconstruction using Interpolation 利用内插重建信号
 
@@ -707,11 +707,11 @@ To be continued...
 
 ## 7.4 Discrete-Time Processing of Continous-Time Signals
 
-![](25_signal/CT-signal-processing-DT.jpg)
+![](25_signal/CT-signal-processing-DT.webp)
 
 
 
-![](25_signal/DT-processing-of-CT-signals-2.jpg)
+![](25_signal/DT-processing-of-CT-signals-2.webp)
 
 
 
@@ -820,7 +820,7 @@ $$
 
 ## 8.6 Some LT pairs
 
-![](25_signal/LT_pairs.jpg)
+![](25_signal/LT_pairs.webp)
 
 {% endnote %}
 
@@ -903,7 +903,7 @@ $$
 
 ## Properties of ZT
 
-![](25_signal/ZT-properties.jpeg)
+![](25_signal/ZT-properties.webp)
 
 {% endnote %}
 
@@ -913,6 +913,6 @@ $$
 
 ## ZT pairs
 
-![](25_signal/ZT-pairs.jpeg)
+![](25_signal/ZT-pairs.webp)
 
 {% endnote %}

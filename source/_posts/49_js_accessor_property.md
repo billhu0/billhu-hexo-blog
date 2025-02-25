@@ -48,7 +48,7 @@ console.log(desc);
 
     但是如果只看后三行代码可能会让别人很迷惑，为什么明明进行了 `obj.a = 100` 的赋值操作，值却没有修改？更好的做法是，使用 `getter`在修改属性时给出报错信息，告知使用者该属性不可修改。
 
-    ![](49_js_accessor_property/image-20240615000132611.png)
+    ![](49_js_accessor_property/image-20240615000132611.webp)
 
   - **get, set**
 

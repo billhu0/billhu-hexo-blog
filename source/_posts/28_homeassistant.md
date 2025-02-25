@@ -58,11 +58,11 @@ After that, execute `hass` to start homeassistant service. It may take tremendou
 hass
 ```
 
-![](28_homeassistant/hass_install_pyenv_process.png)
+![](28_homeassistant/hass_install_pyenv_process.webp)
 
 You can visit `homeassistant.local` or  `<IP>:8123` (replace `<IP>` with your raspberry pi's ip addr), and wait until the homeassistant welcome page appears.
 
-![](28_homeassistant/hass_welcome_page.png)
+![](28_homeassistant/hass_welcome_page.webp)
 
 ### Step3. Autostart
 

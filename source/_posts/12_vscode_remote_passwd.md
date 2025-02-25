@@ -61,7 +61,7 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub USERNAME@HOSTIP
 
 其中`USERNAME`是linux的用户名，`HOSTIP`是host的ip地址，对于PD虚拟机，可以点击顶栏上的网络图标看到这个地址，一般是10.211.55.x。比如我连接自己的ubuntu虚拟机，可以将`USERNAME@HOSTIP`换成`bill@10.211.55.4`.
 
-![](12_vscode_remote_passwd/shot1.png)
+![](12_vscode_remote_passwd/shot1.webp)
 
 这个命令会自动给远程主机的`~/.ssh`, `~/.ssh/authorized_keys`设置合适的权限并把本地公钥复制过去。
 

@@ -24,7 +24,7 @@ You may encounter 'This PC can't run Windows 11' when upgrading to or installing
 
 ![](46_win11_skip_tpm/installer-2.webp)
 
-![](46_win11_skip_tpm/installer-1.jpg)
+![](46_win11_skip_tpm/installer-1.webp)
 
 
 
@@ -113,6 +113,6 @@ In this way you are installing Windows 11 image with Windows 10 installer, so do
 
 Download [Rufus](https://rufus.ie/), plug in an external U-disk and create a USB startup disk using Rufus. 
 
-![](46_win11_skip_tpm/rufus-1.png)
+![](46_win11_skip_tpm/rufus-1.webp)
 
 After that, directly run the setup.exe from your external U-disk.

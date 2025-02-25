@@ -54,11 +54,11 @@ Then, copy the text in file `~/.ssh/id_rsa.pub`.
 
 Go to GitHub website, Settings, select `SSH and GPG keys` on the left sidebar, and click `New SSH key`.
 
-![](06_hexo/SSH_1.jpg)
+![](06_hexo/SSH_1.webp)
 
 Choose a title (any title is OK), and paste the text into `Key`, after that click `Add SSH key` to complete the process.
 
-![](06_hexo/SSH_2.png)
+![](06_hexo/SSH_2.webp)
 
 Finally, in terminal, run
 
@@ -69,7 +69,7 @@ type `yes` when seeing 'Are you sure .... ', and wait for responce.
 
 `Hi, xxx! You've successfully authenticated, ...` means that the connection is successful.
 
-![](06_hexo/SSH_3.png)
+![](06_hexo/SSH_3.webp)
 
 
 ## Step 3. Create Github Pages Repository
@@ -139,7 +139,7 @@ deploy:
 	branch: main  # or master, according to your repository.
 ```
 
-![](06_hexo/deploy_yml.png)
+![](06_hexo/deploy_yml.webp)
 
 
 And then run the following command in terminal

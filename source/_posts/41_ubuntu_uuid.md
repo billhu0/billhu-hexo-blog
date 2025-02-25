@@ -13,15 +13,15 @@ tags:
 
 - `ls -l /dev/disk/by-uuid`
 
-  ![](41_ubuntu_uuid/ls_dev_disk_by_uuid.png)
+  ![](41_ubuntu_uuid/ls_dev_disk_by_uuid.webp)
 
 - `sudo blkid`
 
-  ![](41_ubuntu_uuid/sudo_blkid.png)
+  ![](41_ubuntu_uuid/sudo_blkid.webp)
 
 - `lsblk -o name,mountpoint,size,uuid`
 
-  ![](41_ubuntu_uuid/lsblk.png)
+  ![](41_ubuntu_uuid/lsblk.webp)
 
 ## 格式化硬盘为ext4
 
@@ -60,7 +60,7 @@ UUID=67E91005-EB18-4E24-8410-EB9A1C2E3882 /mnt/ssd ext4 defaults 0 0
 
 E.g.
 
-![](41_ubuntu_uuid/etc_fstab.png)
+![](41_ubuntu_uuid/etc_fstab.webp)
 
 
 

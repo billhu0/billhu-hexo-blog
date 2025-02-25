@@ -171,7 +171,7 @@ Note: You can use Command + Shift + P ( Ctrl + Shift + P )  and search for 'sett
 
 Click "tex" in the left column bar, and inside `Build LaTeX Project` menu, choose one at your need. Usually `PDFLatex` or  `XeLaTeX` is fine.
 
-![](09_vscode_latex/screenshot1.png)
+![](09_vscode_latex/screenshot1.webp)
 
 Now the latex will automatically compile every time you save the file. (`CMD+S` to save)
 
@@ -193,11 +193,11 @@ Make sure the latex file encoding is 'UTF-8', and add a package at the top:
 
 ​	In Preference -> Plugins, download and install  `TeXiFy IDEA` and `PDF Viewer.	
 
-![](09_vscode_latex/image-20210915230311465.png)
+![](09_vscode_latex/image-20210915230311465.webp)
 
 ​	If it cannot find anything and warns a network issue, try settings -> Auto-detect proxy settings -> Fill in `plugins.jetbrains.com`
 
-![](09_vscode_latex/11.jpg)
+![](09_vscode_latex/11.webp)
 
 
 
@@ -205,11 +205,11 @@ Make sure the latex file encoding is 'UTF-8', and add a package at the top:
 
 ​	Create a file with `.tex` extension, and click  `Add Configuration` at the top-right corner
 
-![](09_vscode_latex/image-20210915231225002.png)
+![](09_vscode_latex/image-20210915231225002.webp)
 
 ​	Click the + Button at top-left, and select LaTeX
 
-![](09_vscode_latex/image-20210915231334132.png)
+![](09_vscode_latex/image-20210915231334132.webp)
 
 ​	'Name' can be anything (e.g. the tex file name); 
 
@@ -219,7 +219,7 @@ Make sure the latex file encoding is 'UTF-8', and add a package at the top:
 
 ​	'Main File to compile': Choose the tex file you want to compile.
 
-![](09_vscode_latex/2314213.jpg)
+![](09_vscode_latex/2314213.webp)
 
 ### 3. Compile LaTeX
 
@@ -227,7 +227,7 @@ Make sure the latex file encoding is 'UTF-8', and add a package at the top:
 
 ​	Each time you use`Control + R`, the latex will compile and the PDF will be updated.
 
-![](09_vscode_latex/image-20210915232257650.png)
+![](09_vscode_latex/image-20210915232257650.webp)
 
 ​	
 ## How to use `minted` package in latex
@@ -249,18 +249,18 @@ pip3 install pygments
 
 And you have to make sure `pygmentize` is in your PATH.
 
-![](09_vscode_latex/pygmentize.png)
+![](09_vscode_latex/pygmentize.webp)
 
 Modify corresponding configuration in VSCode `settings.json`, add  `--shell-escape` to the args in PDFLatex, like the following:
 
-![](09_vscode_latex/shell-escape.jpg)
+![](09_vscode_latex/shell-escape.webp)
 
 Then remove `.aux` files from auto-clean file types. (`.aux` file records all the reference numbers, without which references `\ref` may be compiled to `??`)
 
-![](09_vscode_latex/aux1.png)
+![](09_vscode_latex/aux1.webp)
 
 
 
 Then you should be able to use `minted`!
 
-![](09_vscode_latex/compileWithPdftex.jpg)
+![](09_vscode_latex/compileWithPdftex.webp)

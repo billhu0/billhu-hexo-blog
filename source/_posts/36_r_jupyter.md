@@ -27,7 +27,7 @@ install.packages('IRkernel')
 
 When the installation is complete, the program will output the location of the downloaded packages. For example: 
 
-![](36_r_jupyter/downloaded_packages.jpg)
+![](36_r_jupyter/downloaded_packages.webp)
 
 Copy the location and in shell
 

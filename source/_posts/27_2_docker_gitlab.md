@@ -83,7 +83,7 @@ docker --version
 ```
 The output should look similar to 
 
-![](27_docker/docker_version.png)
+![](27_docker/docker_version.webp)
 
 Then, 
 ```
@@ -152,7 +152,7 @@ cd /opt/gitlab/bin
 gitlab-rails console  # this may take some time
 ```
 and you should see the following
-![](27_docker/docker_gitlab_console.png)
+![](27_docker/docker_gitlab_console.webp)
 
 After that, find the root user by entering
 ```
@@ -165,5 +165,5 @@ u.password_confirmation='12345678'
 u.save
 ```
 and the password is changed.
-![](27_docker/docker_gitlab_password2.png)
+![](27_docker/docker_gitlab_password2.webp)
 

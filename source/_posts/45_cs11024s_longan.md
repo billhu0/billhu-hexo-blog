@@ -164,7 +164,7 @@ BOOT0按键和RESET按键的位置请查看下图
 
   这样的缺点是IDE代码检查会不正确，像下面一样有很多爆红，体验不是很好，但除此之外不会影响编译和烧录过程。
 
-  ![](45_cs11024s_longan/ide-noplatformio-sense.jpg)
+  ![](45_cs11024s_longan/ide-noplatformio-sense.webp)
 
 - **不要混用两种方法**（即不要既通过 pip 安装 platformio 又安装 vscode 的 PlatformIO IDE 插件；可以先卸载 pip 的 platformio 再去安装 vscode 插件）。
 
@@ -178,7 +178,7 @@ BOOT0按键和RESET按键的位置请查看下图
 
 插件安装完成之后，点击 vscode 侧边栏中的 PlatformIO 图标，等待初始化完成
 
-![](45_cs11024s_longan/vscode-21.jpg)
+![](45_cs11024s_longan/vscode-21.webp)
 
 解压下载的 lab12-starter, 打开该目录并打开里面的 `platformio.ini` 文件，点击 build。
 
@@ -218,7 +218,7 @@ drwxrwxr-x   4 username username 4096  Mar 29 09:34 platforms
 
 - 无法编译，找不到 gd32v
 
-  ![](45_cs11024s_longan/troubleshoot-nokit.jpg)
+  ![](45_cs11024s_longan/troubleshoot-nokit.webp)
 
   这是没装Longan Dev Kit，请确认安装了 https://epan.shanghaitech.edu.cn/l/KFjNMO 中的Longan Dev Kit。
 
@@ -230,7 +230,7 @@ drwxrwxr-x   4 username username 4096  Mar 29 09:34 platforms
 
 - 无法编译，`HTTPClientError`
 
-  ![](45_cs11024s_longan/troubleshoot-httpclienterror.jpg)
+  ![](45_cs11024s_longan/troubleshoot-httpclienterror.webp)
 
   请重新安装PlatformIO。在重新安装的过程中，vscode不要打开 `platformio.ini`，也不要打开任何含有 `platformio.ini` 文件的目录！
 
@@ -238,7 +238,7 @@ drwxrwxr-x   4 username username 4096  Mar 29 09:34 platforms
 
 - 无法编译，提示文件权限问题
 
-  ![](45_cs11024s_longan/troubleshoot-permission.jpg)
+  ![](45_cs11024s_longan/troubleshoot-permission.webp)
 
   这是因为你下载Dev Kit后，先本地解压，再使用某种工具（如scp）将文件拷贝到了远程的另一台电脑上，这一过程文件权限（可执行权限）丢失。
 

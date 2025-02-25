@@ -33,7 +33,7 @@ free -m
 
 If the row 'swap' shows zero, it indicates you does not have swap currently.
 
-![](18_ubt_swap/free_m_withswap.png)
+![](18_ubt_swap/free_m_withswap.webp)
 
 ### Step1. Create a swap file
 
@@ -66,7 +66,7 @@ sudo swapon /swapfile
 
 If succeeds, you can see the fillowing prompt
 
-![](18_ubt_swap/swapon.png)
+![](18_ubt_swap/swapon.webp)
 
 {% note info %}
 Now you can use `free -m` command again to check whether the swap is successfully turned on.
@@ -89,7 +89,7 @@ Add the following line at the end of file, save, and exit.
 
 The contents of this file should look similar to the following
 
-![/etc/fstab](18_ubt_swap/fstab.png)
+![/etc/fstab](18_ubt_swap/fstab.webp)
 
 Now you have successfully configured swap and make it start automatically at boot.
 

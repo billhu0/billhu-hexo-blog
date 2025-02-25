@@ -13,7 +13,7 @@ For my new M2 MacBook Air.
 
 ## Terminal
 
-![](32_macos/iterm2.png)
+![](32_macos/iterm2.webp)
 
 ### Install 'oh-my-zsh' and plugins
 
@@ -137,7 +137,7 @@ brew update
 
   Then in Settings --> Privacy & Security, you can see the option "Anywhere".
 
-  ![](32_macos/spctl-master-disable.jpg)
+  ![](32_macos/spctl-master-disable.webp)
 
 - Turn off SIP protection. 
 
@@ -187,7 +187,7 @@ brew update
 
   Finder --> Settings --> Turn on "Show all filename extensions"
 
-  ![](32_macos/finder-settings.png)
+  ![](32_macos/finder-settings.webp)
 
 - Safari
 
@@ -197,23 +197,23 @@ brew update
 
   Settings --> Advanced --> Turn on "Show features for web developers". 启用safari的DevTools。
 
-  ![](32_macos/safari-openSafeFilesAfterDownload.png)
+  ![](32_macos/safari-openSafeFilesAfterDownload.webp)
 
 - 如果使用非苹果键盘想互换command和option按键（windows和alt按键）：
 
   Settings --> Keyboard --> Keyboard Shortcuts --> Modifier Keys
 
-  ![](32_macos/modifier-keys.png)
+  ![](32_macos/modifier-keys.webp)
 
   非苹果键盘没有地球仪键，可能没法切换输入法，可在Input sources中把切换输入法快捷键设置成control+空格.
 
-  ![](32_macos/input-source-shortcut.png)
+  ![](32_macos/input-source-shortcut.webp)
   
 - Hot corners 触发角
 
   Settings --> Desktop & Dock --> Hot corners (at the bottom)
 
-  ![](32_macos/hot corners.png)
+  ![](32_macos/hot corners.webp)
 
 ## CLI-related miscellaneous things
 
@@ -233,7 +233,7 @@ brew update
 
     Go to Settings, General, Sharing, scroll to the bottom.
     
-    ![](32_macos/modify-hostname.jpg)
+    ![](32_macos/modify-hostname.webp)
     
 - Turn off 'powernap' and 'tcpkeealive'. This disables wifi connection at system sleep to save battery power, but may result in features like 'Find My Mac' not to function properly. Do with caution!
 
@@ -246,7 +246,7 @@ brew update
 
   In Settings, Keyboard, set Key repeat rate to the highest.
 
-  ![](32_macos/key-repeat-rate.jpg)
+  ![](32_macos/key-repeat-rate.webp)
   
 - Trackpad-related
 
@@ -299,7 +299,7 @@ brew update
 
   
 
-  ![](32_macos/mos.png)
+  ![](32_macos/mos.webp)
 
 - **Rectangle**: Window manager.
 
@@ -325,7 +325,7 @@ brew update
 
   
 
-  ![](32_macos/asitop.png)
+  ![](32_macos/asitop.webp)
 
 - **Smartctl**: a tool to view your hard disk usage.
 
@@ -335,7 +335,7 @@ brew update
   
   Run with `smartctl -a disk0`.
   
-  ![](32_macos/smartctl.png)
+  ![](32_macos/smartctl.webp)
 
 
 

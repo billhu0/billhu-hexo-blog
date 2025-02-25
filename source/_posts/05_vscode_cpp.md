@@ -18,7 +18,7 @@ tags:
 
 下载插件`coderunner`即可。
 
-![](05_vscode_cpp/coderunner.png)
+![](05_vscode_cpp/coderunner.webp)
 
 
 
@@ -58,11 +58,11 @@ tags:
 
 先安装插件 `CodeLLDB`。
 
-![](05_vscode_cpp/codelldb.png)
+![](05_vscode_cpp/codelldb.webp)
 
 在工作区的`.vscode`文件夹内（如果没有的话就新建一个），新建两个名为 `tasks.json` 和 `launch.json` 的文件。
 
-![](05_vscode_cpp/newFile.png)
+![](05_vscode_cpp/newFile.webp)
 
 文件内填写以下内容：
 
@@ -127,11 +127,11 @@ tags:
 }
 ```
 
-保存好这两个json配置文件之后，在vscode左边边栏的“调试”中，应该就能看到cpp debug的字样。![](05_vscode_cpp/1.png)
+保存好这两个json配置文件之后，在vscode左边边栏的“调试”中，应该就能看到cpp debug的字样。![](05_vscode_cpp/1.webp)
 
 这个时候打上断点，点击cpp debug旁边的运行按钮，就可以调试了。
 
-![](05_vscode_cpp/debugging.png)
+![](05_vscode_cpp/debugging.webp)
 
 #### 备注：
 

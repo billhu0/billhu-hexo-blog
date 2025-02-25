@@ -21,7 +21,7 @@ Alternatively, after you flashed the SD card with raspi os, create a file named 
 
 When connecting to raspi (or any other ssh hosts) with ssh, if the following error happens: 
 
-![](02_raspi_config/ssh_host_changed.png)
+![](02_raspi_config/ssh_host_changed.webp)
 
 The solution is to use the following command (replace `<IP_ADDRESS>` with the IP address of raspi), and connect again
 
