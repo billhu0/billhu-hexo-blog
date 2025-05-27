@@ -3,7 +3,6 @@ title: Ubuntu Configs
 date: 2022-02-14 20:17:07
 categories: 
 - Linux
-sticky: 100
 description: For Ubuntu Desktop or Ubuntu Server with x86_64 arch。
 tags:
 - Linux
