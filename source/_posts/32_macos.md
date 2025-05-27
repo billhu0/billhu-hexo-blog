@@ -2,7 +2,7 @@
 title: My macOS Config
 date: 2024-07-25 11:32:00
 description: It's something Only Apple Can Do!
-draft: true
+sticky: 101
 categories: 
 - macOS
 tags:
