@@ -83,9 +83,9 @@ tags:
 
     ![](059_aws_basics/ec2-states.png)
 
-  - Stop指关机, Stop-hibernate类似于睡眠
+    - Stop指关机, Stop-hibernate类似于睡眠
 
-  - 仅Running和Stopping状态会被收费
+    - 仅Running和Stopping状态会被收费
 
 - **Container**
 
@@ -133,7 +133,7 @@ Storage types
 - **Block storage**: 不同于file storage将文件看成整体, block storage中文件会被split成fixed-size chunks
   - **Amazon EC2 instance store**: EC2实例上自带的硬盘
   - **Amazon EBS** (Elastic Block Store): 可以attach / detach在EC2实例上的运营盘
-- **Object storage**: 文件存储成objects, object整体就是一个单位,如果修改1GB文件中的1个字节, 则需要更新整个object
+- **Object storage**: 文件存储成objects, object整体就是一个单位. 如果修改1GB文件中的1个字节, 则需要更新整个object
   - **Amazon S3** (Simple Storage Service): standalone storage solution that isn't tied to compute. S3是一种object storage, 但必须要先创建**bucket**之后才能将object存储在bucket中
 
 ## AWS Database
@@ -153,4 +153,9 @@ Storage types
 ## AWS Monitoring
 
 - metrics: 监测的指标, 例如EC2 CPU utilization
-- **Amazon Cloudwatch**: 许多aws服务会自动定期向cloudwatch发送日志. 可以查看cloudwatch logs. 可以创建alarms, 在指定的metrics超出告警阈值时发出alarm, 并执行指定的actions (例如auto scaling, 或使用**Amazon SNS (Simple Notificaton Service)**向指定邮箱发送警告)
+- metrics over time → **Statistics**
+- **Amazon Cloudwatch**: 许多aws服务会自动定期向cloudwatch发送日志. 可以查看cloudwatch logs. 
+  - 可以创建alarms, 在指定的metrics超出告警阈值时发出alarm, 
+  - Alarm有三种状态: In alarm, OK, insufficient data. 在状态转换时执行指定的actions (例如auto scaling, 或使用**Amazon SNS (Simple Notificaton Service)**向指定邮箱发送警告)
+- **ELB (Elastic Load Balancing)**: Application LB (http/https), Network LB (tcp/udp/tls), Gateway LB (IP)
+  - **ALB**的组成部分: **listener** (e.g. listen to port 443), **target group**, **rule** (可指定哪些流量映射到哪些target group)
