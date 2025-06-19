@@ -8,6 +8,7 @@ tags:
 categories:
 - Cross Platform
 - "Java & Kotlin"
+description: "Kotlin isn't just a Syntactic Sugar for Jvav!"
 ---
 
 # Java vs Kotlin
@@ -62,14 +63,14 @@ Equivalent to **Java**
 class Person {
 	private final String name;
 	private final int age;
-  
-  public Person(final String name, final int age) {
-    this.name = name;
-    this.age = age;
-  }
-  
-  String getName() { return name; }
-  int getAge() { return age; }
+
+	public Person(final String name, final int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	String getName() { return name; }
+	int getAge() { return age; }
 }
 ```
 
@@ -86,15 +87,15 @@ class Person {
 	private String name;
 	private int age;
   
-  public Person(final String name, final int age) {
-    this.name = name;
-    this.age = age;
-  }
+	public Person(final String name, final int age) {
+		this.name = name;
+		this.age = age;
+	}
   
-  String getName() { return name; }
-  void setName(String name) { this.name = name; }
-  int getAge() { return age; }
-  void setAge(int age) { this.age = age; }
+	String getName() { return name; }
+	void setName(String name) { this.name = name; }
+	int getAge() { return age; }
+	void setAge(int age) { this.age = age; }
 }
 ```
 
@@ -127,22 +128,22 @@ class Person {
 	private final String name;
 	private final int age;
   
-  public Person(@NotNull final String name, final int age) {
-    this.name = name;
-    this.age = age;
-  }
+	public Person(@NotNull final String name, final int age) {
+		this.name = name;
+		this.age = age;
+	}
 	
-  // getter (so setter here because fields are final)
+	// getter (so setter here because fields are final)
 	public String getName() { return name; }
-  public int getAge() { return age; }
+	public int getAge() { return age; }
   
-  // toString
-  @Override
+	// toString
+	@Override
 	public String toString() {
 		return "Person(" + "name='" + name + ", age=" + age + ')';
 	}
   
-  @Override
+	@Override
 	public boolean equals(Object o) {
 		if (this == o) {
 			return true;
@@ -166,9 +167,9 @@ import lombok.NonNull;
 
 @Data
 public class Person {
-  @NonNull
-  private String name;
-  private int age;
+	@NonNull
+	private String name;
+	private int age;
 }
 
 // lombok.Data will generate getters, setters, hashCode(), toString() and equals()
@@ -199,11 +200,11 @@ Don't forget Kotlin also supports 1 or more **`init` codeblock** and 1 or more *
 
 ```kotlin
 data class Person(val name: String, val age: Int) {
-  init {
-    println("Person created with name $name and age $age")
-  }
+	init {
+		println("Person created with name $name and age $age")
+	}
 	// secondary constructor
-  constructor(name: String): this(name, 0)
+	constructor(name: String): this(name, 0)
 }
 ```
 
@@ -368,3 +369,76 @@ class Derived(p: Int): Base(p)
 
 
 
+## Equals
+
+Kotlin中 `a == b` 相当于java中的 `a?.equals(b)?:(b===null)`
+
+- 如果`a`不为空则等同于 `a.equals(b)`, 如果 `a` 为空则比较a和b是否同时为空
+
+Kotlin中 `a === b` 用于比较两个对象是否是同一个instance (类似Python中的 `is` ). 对于primitive types (例如 `Int` 则相当于 `==`)
+
+
+
+## Public, Protected, Private
+
+Kotlin中对于top-level
+
+- 不写则默认 `public`
+
+- 标注 `private` 则仅当前文件可见
+
+- 标注 `internal` 则同一个module下可见
+
+- 不支持 `protected`
+
+- e.g. 
+
+  ```kotlin
+  // file name: example.kt
+  package foo
+  
+  fun foo() { ... }         // visible everywhere
+  private fun foo() { ... } // visible only inside example.kt
+  
+  public var bar: Int = 5 // property is visible everywhere
+      private set         // setter is visible only in example.kt
+  
+  internal val baz = 6    // visible only inside the same module
+  ```
+
+对于class的成员
+
+- 不写则默认 `public `
+
+- `protected`, `private` 与java中相同
+
+- `internal` 代表同一个module下可见
+
+- e.g.
+
+  ```kotlin
+  open class Outer {
+      private val a = 1         // visible for only this class
+      protected open val b = 2  // visible for subclasses
+      internal open val c = 3   // visible for same module
+      val d = 4                 // public by default
+  
+      protected class Nested {  // visible for subclasses
+          public val e: Int = 5 // If "Nested" is visible, then this is visible
+      }
+  }
+  
+  class Subclass : Outer() {
+      // a is not visible
+      // b, c, d, Nested, e are visible
+      override val b = 5   // 'b' is protected
+      override val c = 7   // 'c' is internal
+  }
+  
+  class Unrelated(o: Outer) {
+      // o.a, o.b, o.Nested, o.Nested.e are not visible
+      // o.c and o.d are visible (same module)
+  }
+  ```
+
+  

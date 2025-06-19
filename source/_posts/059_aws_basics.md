@@ -132,7 +132,7 @@ Storage types
   - **Amazon EFS** (Elastic File System), **Amazon Fsx**
 - **Block storage**: 不同于file storage将文件看成整体, block storage中文件会被split成fixed-size chunks
   - **Amazon EC2 instance store**: EC2实例上自带的硬盘
-  - **Amazon EBS** (Elastic Block Store): 可以attach / detach在EC2实例上的运营盘
+  - **Amazon EBS** (Elastic Block Store): 可以attach / detach在EC2实例上的云硬盘
 - **Object storage**: 文件存储成objects, object整体就是一个单位. 如果修改1GB文件中的1个字节, 则需要更新整个object
   - **Amazon S3** (Simple Storage Service): standalone storage solution that isn't tied to compute. S3是一种object storage, 但必须要先创建**bucket**之后才能将object存储在bucket中
 
