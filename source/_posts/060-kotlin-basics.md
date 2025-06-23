@@ -227,6 +227,12 @@ class Person {
 
 **Kotlin**
 
+{% note success %}
+
+Lambda函数不要写 `return` 关键词! 函数体内最后一个表达式的值即为返回值
+
+{% endnote %}
+
 - 函数是Kotlin的一等公民, 函数能够当作普通变量存储, 或作为参数传递
 
 ```kotlin
@@ -251,7 +257,139 @@ data class Person(val name: String, val age: Int) {
   listOf(1,2,3).filter{it % 2 == 0}
   ```
 
+
+## kotlin Lambda, 函数, 匿名函数, 将函数作为参数
+
+Kotlin中可以把函数作为参数传递
+
+```kotlin
+// @param
+fun operate(x: Int, y: Int, operationFunc: (Int, Int) -> Int): Int {
+    return operationFunc(x, y)
+}
+
+fun main() {
   
+    // We can pass a lambda literal as an arg
+    val sum: (Int, Int) -> Int = { a, b -> a + b}
+    println(operate(10, 20, sum))  // prints 30
+
+    // We can also pass a function reference
+    fun multiply(a: Int, b: Int): Int {
+        return a * b
+    }
+    println(operate(10, 20, ::multiply))  // prints 200
+}
+```
+
+Java (Java8之前) 中不能把函数作为参数传递. 如果想要实现同样的功能, 只能**将函数包进对象**的`invoke`方法中, 再来传递这个对象.
+
+```java
+// Java: need to define a functional interface as a stand-in for "a function"
+public interface Operation {
+    int invoke(int a, int b);
+}
+
+public class Main {
+    // The "operate" method takes an Operation object
+    static int operate(int x, int y, Operation op) {
+        return op.invoke(x, y);
+    }
+
+    public static void main(String[] args) {
+        // Pre-Java8: use an anonymous class
+        Operation sumOp = new Operation() {
+            @Override
+            public int invoke(int a, int b) {
+                return a + b;
+            }
+        };
+        System.out.println( operate(10, 20, sumOp) );  // prints 30
+    }
+}
+```
+
+Kotlin底层使用类似的原理, 实际上kotlin只是提供了“语法糖”, 当你在kotlin中使用函数作为参数传递时, 传递的其实是一个带有`invoke`方法的对象.
+
+Kotlin的底层使用类似的原理, 仍然只有对象才能作为args传递. 如果想将函数作为arg传递, 需要使用双冒号 `::`代表 **function reference**, 代表把一个函数封起来变成一个对象
+
+```kotlin
+fun multiply(a: Int, b: Int): Int {
+  return a * b
+}
+println(operate(10, 20, multiply))  // ❌编译错误, 不可以这么写
+println(operate(10, 20, ::multiply))  // ✅可以
+```
+
+只有对象才能赋值给一个变量. 函数仍然不可以赋值给变量
+
+```kotlin
+fun multiply(a: Int, b: Int): Int {
+  return a * b
+}
+val a = multiply;    // ❌编译错误
+val a = ::multiply;  // ✅可以
+```
+
+将`multiply`的function reference对象 `::multiply`赋值给变量 `a` 后, 就可以使用 `a(...args)` 调用这个函数了. 虽然看起来这个function reference可以直接使用`()`调用, 但jvm实际上执行的仍是对象的 `invoke` 方法.
+
+```kotlin
+fun multiply(a: Int, b: Int): Int {
+  return a * b
+}
+val a = ::multiply;
+println(a(10, 20))             // also prints 200. Actually calls a.invoke(10,20) underhood.
+println(a.invoke(10, 20))      // also prints 200. Same as above
+println(multiply(10, 20))      // prints 200.      Directly calls the "multiply" function
+println(multiply.invoke(10, 20)) // ❌ The function itself doesn't have "invoke" method.
+```
+
+函数也可以作为匿名函数传递. **Kotlin中匿名函数不是函数, 是对象**, 所以才可以传递
+
+```kotlin
+println(operate(10, 20, fun(a: Int, b: Int): Int {
+	return a * b;
+}))  // prints 200
+```
+
+大多数情况下, 匿名函数还能再简化成lambda表达式的形式. 
+
+再次注意: Lambda函数不要写 `return` 关键词! 函数体内最后一个表达式的值即为返回值.
+
+```kotlin
+println(operate(10, 20, {
+    a: Int, b: Int -> a * b
+}))  // prints 200
+```
+
+如果lambda是函数的最后一个参数, 那么可以把lambda写在函数的外面.  (事实上上面的代码会有同样的IDE提示: Lambda argument should be moved out of parentheses)
+
+```kotlin
+println(operate(10, 20) { a: Int, b: Int ->
+    a * b
+})  // prints 200
+```
+
+实际上, lambda函数的参数类型和返回值类型都可以省略. 
+
+```kotlin
+println(operate(10, 20) { a, b ->
+    a * b
+})  // prints 200
+```
+
+为什么可以不写? 因为上文`operate()`函数的定义已经有明确说明: 需要传入函数的参数和返回值类型为 `(Int, Int) -> Int)`
+
+```kotlin
+// operate()'s definition, mentioned above
+fun operate(x: Int, y: Int, operationFunc: (Int, Int) -> Int): Int {
+    return operationFunc(x, y)
+}
+```
+
+
+
+
 
 ## NullSatety
 
@@ -379,7 +517,50 @@ Kotlin中 `a === b` 用于比较两个对象是否是同一个instance (类似Py
 
 
 
-## Public, Protected, Private
+## Unit, Nothing, void, java.lang.Void
+
+如果看到一个kotlin函数的返回值是`Unit` , 那么它代表 “no meaningful return value”, 大致相当于`void`, 但不等于 `void`
+
+- **Java**中, `void` 不是类型 (代表它不是class, 不能赋值给任何变量...), 仅仅代表函数没有返回值
+
+- **Kotlin**中, `Unit` 是一个类型, 也是一个**singleton object** (单例对象). 不写函数返回值时, kotlin编译器会隐式加上 `return Unit.INSTANCE`来返回一个 `Unit` 类型的对象
+
+  ```kotlin
+  fun sayHello() {
+    println("Hello world")
+  }
+  
+  // will be treated as
+  fun sayHello(): Unit {
+    println("Hello world")
+    return Unit.INSTANCE
+  }
+  ```
+
+- Kt和Java可以互相转化: Java中调用kotlin返回值为`Unit`的函数, 则会看到其返回值为`void`. Kotlin中调用java里`void`返回值的函数, 则会看到其返回 `Unit`.
+
+`Void` 是java中的一个**class `java.lang.Void`**. 注意V是大写的.
+
+- 在**java**中, `Void`是一个class, 但是它的constructor为private, 意味着它 **uninstantiable**, 你无法手动创建 `Void` 的实例, 除了 `null` 以外无法造出任何 `Void` 的值
+- Kotlin中没有`Void`, Kotlin的`Void`即为`java.lang.Void`. 
+
+`Nothing`
+
+- Kotlin中有一个`class Nothing`, 跟`java.lang.Void`有些许类似: 它也拥有一个private的constructor, 意味着不可能创建出任何`Nothing`的实例. 但是`null`也不行 (注意`Nothing`和`Nothing?`的区别). 
+
+  它的源码如下, 就一行. 
+
+  ```kotlin
+  public class Nothing private constructor()
+  ```
+
+  Nothing有什么作用? 
+
+  - 当`Nothing`作为函数返回值时, 函数体内无法写任何`return`语句 (因为不可能创建出`Nothing`类的对象). 常用来给开发者/函数调用者一个提示, 代表这个函数只用来抛异常或这个函数是无限循环, 永远不会返回.
+
+ 
+
+## Public, Protected, Private, Internal
 
 Kotlin中对于top-level
 
@@ -442,3 +623,73 @@ Kotlin中对于top-level
   ```
 
   
+
+## 泛型 <>
+
+Java中不能将子类泛型对象赋值给父类的泛型类型声明. 例如以下代码是不允许的. 
+
+```java
+public class Child extends Parent {
+  /* some code here */
+}
+
+List<Parent> list = new ArrayList<Child>();  // ❌ Compile Error
+```
+
+这是因为编译器会把不同类型的泛型当作互不相关的类型来处理, `List<Parent>` 和 `List<Child>` 是完全不相关的东西. 为了类型安全起见, 不能允许这种操作.
+
+如果允许这种操作, 那么就可以往一个`List<Parent>`中加入一个`new Parent()` 父类对象, 而由于底层的存储实际上是`ArrayList<Child>`, 往`Child` 集合中加入非`Child`的对象就会导致运行时`ClassCastException`.
+
+解决方法是
+
+- **Covariant**: Producer extends.
+
+  任何 `List<Parent>`, `List<Child>` 都能赋值给 `List<? extends Parent>`
+
+  ```java
+  List<? extends Parent> list = new ArrayList<Child>();  // ✅ ok
+  ```
+
+  副作用是: 只能读取 (从中读出值并当作父类使用), 不能添加 (除了例外null以外, 不能往里添加任何对象)
+
+  ```java
+  Parent p = list.get(0);  // ✅ ok. Can Read value.
+  list.add(new Child());   // ❌ Compile Error.
+  list.add(null);          // ✅ ok. null is the only value you can add.
+  ```
+
+- **Contravariant**: Consumer Super.
+
+	父类泛型类型对象赋值给子类的泛型类型声明
+
+	任何 `List<Child>`,`List<Parent>`,`List<Object>` 都可以赋给 `List<? super Child>`。
+	
+	```java
+	List<? super Child> list = new ArrayList<Parent>();  // ✅ ok
+	```
+	
+	副作用是: 只能添加`Child`或`Child`的子类, 不能读取 (只能当作Object类读取出来, 因为编译器只能确定list中实际存在的对象是`Child`或其父类)
+	
+	```java
+	list.add(new Child());      // ✅ ok. You can add Child.
+	list.add(new SubChild());   // ✅ ok. You can also add its subclasses.
+	Child c = list.get(0);      // ❌ Compile error. Return value is always Object.
+	Object o = list.get(0);     // ✅ You can only treat it as Object.
+	```
+
+**Kotlin** 中 `in` 和 `out` 就分别相当于 `? super` 和 `? extends`.
+
+```kotlin
+// Covariant
+interface Producer<out T> {  // equivalent to Producer<? extends T>
+    fun produce(): T
+    // fun consume(item: T) // ❌ Not allowed.
+}
+
+// Contravariant
+interface Consumer<in T> {  // equivalent to Consumer<? super T>
+    // fun produce(): T  // ❌ Not allowed
+    fun consume(item: T)
+}
+```
+

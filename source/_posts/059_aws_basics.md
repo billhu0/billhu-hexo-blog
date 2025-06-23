@@ -34,7 +34,11 @@ tags:
 
   - AWS CLI就是在终端输入aws命令。aws web console上能完成的事情也可以使用终端命令或脚本完成。aws console右上角的终端图标是**cloudshell**，等同于aws cli
 
-    ![](059_aws_basics/aws-cli.jpg)
+    ![终端命令aws](059_aws_basics/aws-cli.jpg)
+
+    or
+
+    ![aws Cloudshell](/Users/billhu/Documents/billhu-hexo-blog/source/_posts/059_aws_basics/aws-cloudshell.jpg)
 
   - AWS SDK: 支持多种语言(C++, Java, js, py, ...) 可集成在不同语言的应用里
 
@@ -68,6 +72,8 @@ tags:
       ```
 
   - 可以创建IAM group, IAM group内的所有IAM user会inherit group的权限。group可拥有多个user, 一个user可属于多个group, 但group不能从属于group
+  
+  - IAM role也被用来规定哪些aws服务能够访问哪些资源. 例如, 赋予一个aws lambda访问aws s3的权限. 
 
 ## AWS Compute
 
