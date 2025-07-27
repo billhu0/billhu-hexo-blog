@@ -102,6 +102,14 @@ JavaScript自动做的事情是
 
 ## Type coercion 奇奇怪怪的类型转换
 
+{% note warning %}
+
+JavaScript为弱类型语言，隐式类型转换过于复杂，且容易出错，不建议使用。
+
+建议别学这些，建议使用TypeScript或Jsdoc规范类型
+
+{% endnote %}
+
 - 首先，使用 `==` 比较两个object，只比较的是它们是否指向同一个对象，否则一律为 `false`. 有点类似于Python3中的 `is` 操作符
 
 - object不会被coerce，只有primitive types能被coerce
@@ -175,7 +183,9 @@ JavaScript自动做的事情是
 
 - 类型转换的例子
 
-  - ```javascript
+  - Code:
+    
+    ```javascript
     console.log(undefined + [])  // 'undefined'
     ```
 
@@ -191,10 +201,12 @@ JavaScript自动做的事情是
 
     因此 `undefined + []` 即为 `'undefined' + ''`, 字符串拼接结果为 `'undefined'`
 
-  - ```javascript
+  - Code
+
+    ```javascript
     console.log([] + {})  // '[object Object]'
     ```
-
+  
     加号左右两边的 `[]` 和 `{}` 都是object，都需要转换成原始类型
 
     上面的例子说过空数组 `[]` 转原始类型为字符串 `''`。而 `{}` 转原始类型过程如下
