@@ -5,71 +5,35 @@ tags:
 - JavaScript
 - Cross Platform
 - nodejs
+math: true
 category: Frontend
 description: "7种primitive原始类型，剩下的全是object对象类型。学了没用，建议写TypeScript避免大部分破事"
 ---
 
-## JavaScript Primitive
+# JavaScript Primitive 原始类型 有7种
 
-Primitive (primitive value, primitive data type) 原始类型，一共有7种
-
-Primitive的定义：不是 `object`, 并且没有methods和properties (没有方法，没有属性)
-
-- string
-- number
-- bigint
-- boolean
-- undefined
-- symbol
-- null
-
-Primitive都为immutable，不能更改（只能给变量重新赋值，指将另一个primitive value赋值给一个variable，在这个过程中primitive value本身仍然是不可变的）
-
-除了`null`和`undefined`外，所有primitive type都有它们各自的object wrapper type
-
-除了`null`外，所有primitive type都可以使用`typeof`操作符来判断类型 （但`typeof null`会返回`'object'`）
-
-| 原始类型 Primitive Type | `typeof` 操作符的返回值 | Object wrapper 类型                                          |
-| :---------------------- | :---------------------- | :----------------------------------------------------------- |
-| Null                    | `"object"`              | 没有                                                         |
-| Undefined               | `"undefined"`           | 没有                                                         |
-| Boolean                 | `"boolean"`             | [`Boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) |
-| Number                  | `"number"`              | [`Number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) |
-| BigInt                  | `"bigint"`              | [`BigInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) |
-| String                  | `"string"`              | [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) |
-| Symbol                  | `"symbol"`              | [`Symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) |
-
-Primitive没有methods，但如果访问一个primitive的property或methods，JavaScript会自动wrap进一个它的object wrapper里，并调用object的方法。
-
-例如:
-
-```javascript
-"foo".includes("f")  // returns true
-```
-
-JavaScript自动做的事情是
-
-```javascript
-(new String("foo")).includes("f")  // String.prototype.includes()
-```
-
-## JavaScript's 7 Primitive Types + 1 Object Type
+Primitive (primitive value, primitive data type), 中文为“原始类型”，一共有且仅有这七种: null, undefined, boolean, number, bigint, string, symbol
 
 - `Null` 类型: 只有一个值: `null`
 
 - `Undefined` 类型: 只有一个值 `undefined`.
+
   - 语义上 `undefined` 通常表示值的缺失，`null`表示object的缺失，可以算作`typeof null === 'object'`的借口
     - 实际上 `typeof null === 'object'` 是历史原因，是设计缺陷。参考: [mdn web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof#typeof_null)
   - 一些场合下，JavaScript会自动赋值`undefined`: 函数传参没传、object的属性找不到(例如 `obj.dontexist`)、函数不给返回值直接`return;`、声明变量不初始化(例如`let x;`)、许多方法未找到值 (例如`Array.prototype.find()`)
-  
+
+- `Boolean` 类型
+
+  - `true` 或 `false`
+
 - `Number` 类型：双精度64bit的IEEE754浮点数
-  
+
   - 忘了IEEE754的话回去看ShanghaiTech CS110：{% post_link 29_cs110 链接 %} --> Lecture 7
   - 能够表示的**正数**浮点数范围为 `Number.MIN_VALUE` 到 `Number.MAX_VALUE` (约为5e-324 到 1.79e308)
   - 能够精确表示的**整数**范围为 `Number.MIN_SAFE_INTEGER` 到 `Number.MAX_SAFE_INTEGER` ( $-(2^{53}-1)$ 到 $2^{53}-1$ )
   - 大于`Number.MAX_VALUE`或小于 `-Number.MIN_VALUE` 的数会被转换为 `Number.POSITIVE_INFINITY` 和 `Number.NEGATIVE_INFINITY`
   - 小于`Number.MIN_VALUE`的正数，或大于 `-Number.MIN_VALUE`的负数，会被转换为 `0`和 `-0`
-  
+
 - `BigInt` 类型
 
   - 可以表示任意大小的正数Integer，大于 `Number.MAX_SAFE_INTEGER` 也可以
@@ -88,11 +52,116 @@ JavaScript自动做的事情是
   - UTF-16编码的字符串，是一个16-bit unsigned integer值组成的sequence
 
 - `Symbol` 类型
-  - 这个是ES6新增的原始类型
-  - 是唯一不可变的primitive类型. 
 
-- `Object` 类型
+  - ES6新增的原始类型
+  
+  - Symbol是唯一具有reference identity的原始类型: 每个symbol值都独一无二. 
+  
+    每次调用 `Symbol()` 构造函数, 都会返回一个unique的symbol值, 例如
+  
+    ```javascript
+    const sym1 = Symbol("foo");
+    const sym2 = Symbol("foo");
+    console.log(sym1 == sym2);  // false
+    ```
+  
+    根据这个特性, symbol可以用来隐藏object的某些属性, 例如
+  
+    ```javascript
+    const privateKey = Symbol("foo");
+    const obj = {
+      [privateKey]: "some private value",
+      normalKey: "normal value"
+    };
+    // 原来的symbol可以正常获取
+    console.log(obj[privateKey]);    // "some private value"
+    // 但是如果没有原先的symbol则无法获取
+    console.log(obj[Symbol("foo")]);  // undefined
+    ```
+  
+    同时symbol作为对象的属性名时,  `for...in`, `for...of`, `Object.keys()`, `Object.getOwnPropertyNames()`, `JSON.stringify()` 等常见方法均无法遍历到Symbol属性, 例如
+  
+    ```javascript
+    const privateKey = Symbol("foo");
+    const obj = {
+      [privateKey]: "some private value",
+      normalKey: "normal value"
+    };
+    console.log(Object.keys(obj));  // ['normalKey']
+    
+    JSON.stringify({ [Symbol("foo")]: "I am invisible!" });  // '{}'
+    ```
+  
+  - `Symbol.for()`, `Symbol.keyFor()` 可以用来设置和获取共享的symbol
+  
+    ```java
+    let s1 = Symbol.for('foo');
+    let s2 = Symbol.for('foo');
+    console.log(s1 === s2); // true
+    ```
+  
+    ```javascript
+    let sym = Symbol.for('foo');
+    Symbol.keyFor(sym); // 'foo'
+    ```
+  
+  - Symbol不能使用new操作符
+  
+    - 常见的primitive (number, string, boolean等) 可以使用new操作符来显式创建object wrapper, 但是symbol不行. 只能使用
+  
+    ```javascript
+    // This is OK
+    let numberWrapper = new Number(1)
+    typeof numWrapper  // 'object'
+    
+    // This will TypeError
+    let symbolWrapper = new Symbol();  // TypeError
+    
+    // This is OK
+    let symbolWrapper = Object(Symbol("foo"));
+    typeof symbolWrapper  // 'object'
+    ```
+  
+  - JavaScript中还有一些内置的Symbol值, 可以用来调控一部分JavaScript的语言行为, 例如 `Symbol.iterator`, `Symbol.toPrimitive`, `Symbol.hasInstance`.
 
+## Primitive的特点
+
+- Primitive的定义：不是 `object`, 并且没有methods和properties (没有方法，没有属性)
+
+- Primitive都为immutable，不能更改
+  - 只能给变量重新赋值，将另一个primitive value赋值给一个variable，但是在这个过程中primitive value本身仍然是不可变的
+
+- 除了`null`外，所有primitive type都可以使用`typeof`操作符来判断类型 （但`typeof null`会返回`'object'`, 属于JavaScript设计缺陷）
+
+| 原始类型 Primitive Type | `typeof` 操作符的返回值 | Object wrapper 类型                                          |
+| :---------------------- | :---------------------- | :----------------------------------------------------------- |
+| Null                    | `"object"`              | 没有                                                         |
+| Undefined               | `"undefined"`           | 没有                                                         |
+| Boolean                 | `"boolean"`             | [`Boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) |
+| Number                  | `"number"`              | [`Number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) |
+| BigInt                  | `"bigint"`              | [`BigInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) |
+| String                  | `"string"`              | [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) |
+| Symbol                  | `"symbol"`              | [`Symbol`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) |
+
+- 除了`null`和`undefined`外，所有primitive type都有它们各自的object wrapper type. 
+
+  Primitive没有methods，但如果访问一个primitive的property或methods，JavaScript会自动wrap进一个它的object wrapper里，并调用object的方法。
+
+  例如:
+
+  ```javascript
+  "foo".includes("f")  // returns true
+  ```
+
+  JavaScript自动做的事情是
+
+  ```javascript
+  (new String("foo")).includes("f")  // String.prototype.includes()
+  ```
+
+# JavaScript Object Type
+
+- `Object` 类型: 
   - 除原始类型外，所有 JavaScript 值均为Object对象
     - 普通对象、数组、函数、`Date`, `RegExp`, `Map`, `Set` 等都是对象
 
@@ -100,7 +169,7 @@ JavaScript自动做的事情是
   - 关于 `Object` 的 data property和 accessor property 可参考另一篇post: {% post_link 49_js_accessor_property 49_js_accessor_property %}
   - `typeof` object 返回值均为 `'object'`, 但有一个例外，`typeof function` 返回值为 `'function'`
 
-## Type coercion 奇奇怪怪的类型转换
+# Type coercion 奇奇怪怪的类型转换
 
 {% note warning %}
 
@@ -110,7 +179,7 @@ JavaScript为弱类型语言，隐式类型转换过于复杂，且容易出错�
 
 {% endnote %}
 
-- 首先，使用 `==` 比较两个object，只比较的是它们是否指向同一个对象，否则一律为 `false`. 有点类似于Python3中的 `is` 操作符
+- 使用 `==` 比较两个object，只比较的是它们是否指向同一个对象，否则一律为 `false`. 有点类似于Python3中的 `is` 操作符
 
 - object不会被coerce，只有primitive types能被coerce
 
@@ -170,8 +239,8 @@ JavaScript为弱类型语言，隐式类型转换过于复杂，且容易出错�
 - 转为primitive之后，需要考虑的事情就变成了primitive如何互相比较或操作
 - 加号 `+` operator: 
   - 如果表达式为 `+value`, 则永远会将`value`给coerce成一个 `number` 类型
-  - 如果表达式为 `anything + string`, 则永远会把 `anything` 给coerce成`string`类型，再拼接字符串
-  - 除此之外，为数字相加
+  - 如果加号两边都有值, 且其中任意一边为string (例如 `anything + string`), 则永远会把 `anything` 给coerce成`string`类型，再拼接字符串
+  - 除此之外，执行数字相加
 - 如果表达式需要布尔值 （例如 `if(value)`, `!value`, `!!value`），则会coerce成 `boolean` 类型
   - Coerce成 `boolean` 的规则: `null`, `undefined`, `0`, `-0`, `''`空字符串, `false`, 转换成布尔会变成 `false`, 其余所有东西转换成布尔都是 `true`
 - 其它coerce primitive values的规则
