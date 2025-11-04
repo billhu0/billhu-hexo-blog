@@ -17,19 +17,21 @@ For my new M2 MacBook Air.
 
 ### Install 'oh-my-zsh' and plugins
 
-- Install Xcode from App Store, OR install Xcode Commandline Tools using the following command
+- 从App Store上下载Xcode（安装比较耗时，占用大约15GB）, 或者，使用以下命令只安装 Xcode Commandline Tools （这个很快，占用仅300MB左右）
 
   ```sh
   xcode-select --install
   ```
 
-- Install oh-my-zsh (Official website: [ohmyz.sh](https://ohmyz.sh))
+- 安装oh-my-zsh (Official website: [ohmyz.sh](https://ohmyz.sh))
 
   ```sh
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   ```
 
-  Note: , use Clash and the following shortcuts to proxy your terminal.
+  {% fold info @中国大陆用户可以考虑让终端和git走clash代理，防止github连不上 %}
+
+  Use Clash and the following shortcuts to proxy your terminal.
 
   ```sh
   # proxy, created on 2024.07.23
@@ -49,7 +51,9 @@ For my new M2 MacBook Air.
   }
   ```
 
-- Install plugins. 
+  {% endfold %}
+
+  Install plugins. 
 
   zsh-syntax-highlighting
 
@@ -63,13 +67,14 @@ For my new M2 MacBook Air.
   plugins=(git zsh-syntax-highlighting)
   ```
 
-  You may also enable some built-in useful plugins
+  You may also enable some built-in useful plugins.
 
   ```sh
   plugins=(git zsh-syntax-highlighting colored-man-pages extract sudo z)
   ```
+
   
-  
+
 
 {% fold info @oh-my-zsh 国内一件安装并配置镜像源脚本（已失效） %}
 
@@ -85,9 +90,9 @@ zsh -c "$(curl -fsSL 'https://api.host.mintimate.cn/fileHost/public/download/1P0
 
 Download iTerm2: [https://iterm2.com](https://iterm2.com)
 
-{% fold info @My Detailed Theme Config %}
+My detailed theme config.
 
-- Install iTerm2 and **set as default terminal**.
+- Install iTerm2 and **set as default terminal**. (Top-left corner, Iterm2, click "Make iTerm2 Default Term" in the dropdown menu)
 - Settings --> Appearance --> General ---> **Theme = Minimal**.
 - Settings --> Profiles --> Colors --> Color Presets --> Solarized Dark High Contrast (Download from [here](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/schemes/Solarized%20Dark%20Higher%20Contrast.itermcolors) and import it). 
 - Settings --> Profiles --> Window --> **Transparency = 13, Keep background colors opaque = true, Blur = 13, Columns = 115**.
@@ -95,11 +100,11 @@ Download iTerm2: [https://iterm2.com](https://iterm2.com)
 - Settings --> Profiles --> Terminal --> Turn on "**Unlimited scrollback**".
 - Settings --> Advanced --> Search for "**Scroll wheel sends arrow keys when in alternate screen mode**" and turn it on.
 
-{% endfold %}
-
 
 
 ## Install HomeBrew
+
+{% fold info @中国大陆用户可以往 `~/.zshrc` 中加入以下环境变量来使用国内源 %}
 
 如果需要使用国内源，append the following to the end of `~/.zshrc`
 
@@ -110,11 +115,15 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 export HOMEBREW_NO_AUTO_UPDATE=true
 ```
 
-then install homebrew with 
+{% endfold %}
+
+Command to install Homebrew.
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+{% fold info @中国大陆用户可以使用以下国内镜像 %}
 
 国内镜像
 
@@ -125,9 +134,9 @@ brew update
 
 > Reference: [Homebrew 源使用帮助 - USTC Mirror Help](https://mirrors.ustc.edu.cn/help/brew.git.html)
 
+{% endfold %}
 
-
-## In order to run cracked applications
+## In order to run third-party applications
 
 - Allow apps downloaded from 'Anywhere'. 
 
@@ -138,16 +147,6 @@ brew update
   Then in Settings --> Privacy & Security, you can see the option "Anywhere".
 
   ![](32_macos/spctl-master-disable.webp)
-
-- Turn off SIP protection. 
-
-  In recovery mode (For Intel Mac, press and hold 'command+R' after pressing power-on button; For Apple Silicon Mac, press and hold the power button until entering startup menu). 
-
-  ```shell
-  csrutil disable
-  ```
-
-  This can prevent some annoying problems, such as `XprotectService` consuming your CPU after downloading some files, or your Mac refuses to open some unknown applications. But this will increase the risk your system being infected. **Do with caution!**
 
 - sudo without password. **Do with caution! Dangerous!**
 
@@ -165,7 +164,7 @@ brew update
 
 ## GUI
 
-- Modify launchpad icon layout
+- Modify launchpad icon layout （更新：macOS 26把启动台砍了，没用了）
 
   You can modify the row number and column number the launchpad displays. 
 
@@ -235,7 +234,7 @@ brew update
     
     ![](32_macos/modify-hostname.webp)
     
-- Turn off 'powernap' and 'tcpkeealive'. This disables wifi connection at system sleep to save battery power, but may result in features like 'Find My Mac' not to function properly. Do with caution!
+- Turn off 'powernap' and 'tcpkeealive'. This disables wifi connection at system sleep to save battery power, but may result in features like 'Find My Mac' not to function properly. Do with caution! 没必要，别做了，这条命令对于M芯片的mac的耗电量影响微乎其微，但反而导致经常断网，没用。
 
     ```shell
     sudo pmset -a powernap 0
