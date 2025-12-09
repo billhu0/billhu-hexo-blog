@@ -38,7 +38,7 @@ tags:
 
     or
 
-    ![aws Cloudshell](/Users/billhu/Documents/billhu-hexo-blog/source/_posts/059_aws_basics/aws-cloudshell.jpg)
+    ![aws Cloudshell](059_aws_basics/aws-cloudshell.jpg)
 
   - AWS SDK: 支持多种语言(C++, Java, js, py, ...) 可集成在不同语言的应用里
 
