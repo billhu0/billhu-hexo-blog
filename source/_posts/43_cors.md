@@ -25,7 +25,7 @@ res.setHeader('Access-Control-Expose-Headers', 'Set-Cookie');
 ```
 {% endnote %}
 
-## 事件起因
+## Incident
 
 Initially, I utilized the following code to set up a backend nodejs server:
 
