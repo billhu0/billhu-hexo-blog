@@ -10,9 +10,9 @@ category: Frontend
 description: "7种primitive原始类型，剩下的全是object对象类型。学了没用，建议写TypeScript避免大部分破事"
 ---
 
-# JavaScript Primitive 原始类型 有7种
+# JavaScript Primitive 原始类型 只有7种
 
-Primitive (primitive value, primitive data type), 中文为“原始类型”，一共有且仅有这七种: null, undefined, boolean, number, bigint, string, symbol
+Primitive (primitive value, primitive data type), 中文为“原始类型”，一共有且仅有这七种: **null, undefined, boolean, number, bigint, string, symbol**
 
 - `Null` 类型: 只有一个值: `null`
 
@@ -288,3 +288,69 @@ JavaScript为弱类型语言，隐式类型转换过于复杂，且容易出错�
 
     将字符串 `''`与字符串 `'[object Object]'` 相拼接，结果为字符串 `'[object Object]'`
 
+# 附: prototype的概念
+
+我们所创建的每一个 `function` 都会有一个属性 `prototype`, 其对应一个对象，称之为 **原型对象**
+
+如果`function`作为普通函数调用，则 `prototype` 没有任何作用；如果`function`以构造函数的形式调用 (`new`操作符)，则它所创建的实例对象中会有一个隐含的属性，指向原型，可通过 `proto` 访问该属性
+
+```javascript
+function Person() {}
+
+// 作为普通函数调用，prototype无任何作用
+let per1 = Person();
+console.log(per1); // undefined
+console.log(per1.prototype);  // Uncaught TypeError: Cannot read properties of undefined (reading 'prototype')
+
+// 使用new操作符调用，则创建出来的对象包含__proto__属性
+let per2 = new Person();
+console.log(per2.__proto__);  // {}
+console.log(per2.prototype);  // undefined
+
+console.log(Person.prototype); // {}
+console.log(per2.__proto__ == Person.prototype); // true
+```
+
+原型对象就相当于一个公共的区域，同一个类的所有实例都能访问到同一个原型对象，此处可以设置公共属性
+
+考虑下面的代码
+
+```javascript
+function Person(name, age) {
+	this.name = name;
+	this.age = age;
+	
+	this.sayName = function() {
+		console.log("Hello, I am " + this.name);
+	}
+}
+```
+
+当我们通过 `new Person(name, age)` 创建了100个 `Person` 对象后，每一个对象都创建一个 `sayName` 方法，会占用内存。正是因此，下面的代码打印 `false`
+
+```javascript
+let per1 = new Person(...);
+let per2 = new Person(...);
+
+console.log(per1.sayName == per2.sayName);  // false
+```
+
+更好的方式是，直接在原型中提那家 `sayName` 方法，这样创建出来的所有实例都会带有这个方法
+
+```javascript
+Person.prototype.sayName = function() {
+	console.log("Hello, I am " + this.name);
+}
+```
+
+### 原型链
+
+原型对象也是对象，所以它也有原型，当我们使用或访问一个对象的属性或方法时：
+
+- 它会先在对象自身中寻找，如果有则直接使用；
+
+- 如果没有则会去原型对象中寻找，如果找到则直接使用；
+
+- 如果没有则去原型的原型中寻找，直到找到`Object`对象的原型。
+
+- `Object`对象的原型没有原型，如果在`Object`原型中依然没有找到，则返回 `null`

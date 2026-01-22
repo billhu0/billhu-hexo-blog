@@ -8,6 +8,7 @@ tags:
 - Bitcoin
 - Monero
 description: "比特币(Bitcoin)和其它加密货币的原理"
+math: true
 ---
 
 # 比特币的原理
