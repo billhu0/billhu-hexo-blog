@@ -73,8 +73,29 @@ For my new M2 MacBook Air.
   plugins=(git zsh-syntax-highlighting colored-man-pages extract sudo z)
   ```
 
+  不想手动 `vim ~/.zshrc` 修改可以使用 `sed` 命令做文本替换
   
+  ```shell
+  sed -i 's/^plugins=(git)$/plugins=(git zsh-syntax-highlighting colored-man-pages extract sudo z)/' ~/.zshrc
+  ```
 
+- 安装 `powerlevel10k` 主题
+
+  ```shell
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+  ```
+
+  修改 `~/.zshrc` 的 `ZSH_THEME="robbyrussell"` 为 `ZSH_THEME="powerlevel10k/powerlevel10k"`
+
+  ```shell
+  # linux
+  sed -i 's|^ZSH_THEME="robbyrussell"|ZSH_THEME="powerlevel10k/powerlevel10k"|' ~/.zshrc 
+  
+  # macos
+  sed -i '' 's|^ZSH_THEME="robbyrussell"|ZSH_THEME="powerlevel10k/powerlevel10k"|' ~/.zshrc
+  ```
+
+  
 
 {% fold info @oh-my-zsh 国内一件安装并配置镜像源脚本（已失效） %}
 
