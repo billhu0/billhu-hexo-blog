@@ -5,6 +5,7 @@ categories:
 tags:
 description: "01背包问题和完全背包问题"
 math: true
+hide: true
 ---
 
 ## 01背包问题
